@@ -1,0 +1,963 @@
+!SESSION 2014-02-17 16:29:40.728 -----------------------------------------------
+eclipse.buildId=v22.3.0-887826
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:31:24.303
+!MESSAGE Failed to load properties file for project 'PromenadeVirtualTours'
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-02-17 16:31:26.330
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-02-17 16:31:26.331
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'Z:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:40:10.201
+!MESSAGE activity_promenade_home.xml: ".25" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:40:22.252
+!MESSAGE activity_promenade_home.xml: ".25" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:40:23.329
+!MESSAGE activity_promenade_home.xml: ".25" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:40:28.952
+!MESSAGE activity_promenade_home.xml: ".25" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:43:01.623
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:43:18.394
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:43:22.564
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:43:27.170
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:43:36.135
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:43:37.891
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:43:51.916
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:43:54.056
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:43:58.753
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:43:58.879
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:00.305
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:00.354
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:00.480
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:01.536
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:01.660
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:06.092
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:06.123
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:06.148
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:06.249
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:06.899
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:06.940
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:06.964
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:07.157
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:13.540
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:27.395
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:41.562
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:41.686
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:44.523
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:44.589
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:44.663
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:45.998
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:48.074
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:48.196
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:49.507
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:49.623
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:52.158
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:52.204
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:52.302
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:53.993
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:54.107
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:55.983
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:58.738
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:44:58.916
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:45:00.236
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:45:00.369
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:45:03.114
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:45:03.732
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:45:03.770
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:45:03.795
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:45:03.825
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:46:39.706
+!MESSAGE activity_promenade_home.xml: ".25" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:46:45.302
+!MESSAGE activity_promenade_home.xml: ".25" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:46:48.976
+!MESSAGE activity_promenade_home.xml: ".25" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:46:51.460
+!MESSAGE activity_promenade_home.xml: ".25" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:47:14.322
+!MESSAGE activity_promenade_home.xml: Dimension "128" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:09.661
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:09.661
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:20.619
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:20.619
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:20.619
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:33.962
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:33.962
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:33.962
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:37.091
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:37.091
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:37.091
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:43.449
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:43.449
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:43.449
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:43.453
+!MESSAGE activity_promenade_home.xml: Dimension "128" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:48.337
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:48.337
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:48.338
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:48.342
+!MESSAGE activity_promenade_home.xml: Dimension "128" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:53.208
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:53.208
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:53.209
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:53.213
+!MESSAGE activity_promenade_home.xml: Dimension "128" in attribute "paddingTop" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:53.382
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:53.383
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:53.383
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:54.480
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:54.480
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:54.481
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:58.449
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:48:58.449
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:48:58.449
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:49:17.790
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:49:17.790
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "padding" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:49:17.790
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:49:17.790
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:50:10.444
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:50:10.444
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "padding" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:50:10.445
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:50:10.445
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:50:12.143
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:50:12.143
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "padding" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:50:12.143
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:50:12.143
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:50:20.753
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:50:20.754
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "padding" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:50:20.754
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:50:20.754
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:50:37.619
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:50:37.620
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "padding" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:50:37.620
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:50:37.620
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:50:39.062
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:50:39.062
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "padding" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 16:50:39.062
+!MESSAGE activity_promenade_home.xml: Dimension "64" in attribute "paddingLeft" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:50:39.062
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:51:08.453
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:51:08.453
+!MESSAGE activity_promenade_home.xml: "64dpi" in attribute "padding" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:51:08.454
+!MESSAGE activity_promenade_home.xml: "64dpi" in attribute "paddingLeft" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:51:08.454
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:51:36.478
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:51:36.478
+!MESSAGE activity_promenade_home.xml: "64 dip" in attribute "padding" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:51:36.478
+!MESSAGE activity_promenade_home.xml: "64 dip" in attribute "paddingLeft" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:51:36.479
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:53:22.182
+!MESSAGE activity_promenade_home.xml: Couldn't resolve resource @dimen/home_padding
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-02-17 16:53:22.183
+!MESSAGE activity_promenade_home.xml: "@dimen/home_padding" in attribute "paddingTop" is not a valid format.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2014-02-17 16:56:22.992
+!MESSAGE 
+!STACK 0
+org.eclipse.e4.core.di.InjectionException: org.eclipse.core.commands.NotHandledException: There is no handler to execute for command org.eclipse.ui.edit.paste
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:63)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:231)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:212)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:131)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:171)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:277)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:496)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:547)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:368)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:314)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:83)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1262)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1104)
+	at org.eclipse.swt.widgets.Text.sendKeyEvent(Text.java:1704)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1100)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1521)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4640)
+	at org.eclipse.swt.widgets.Text.WM_CHAR(Text.java:2584)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4528)
+	at org.eclipse.swt.widgets.Text.windowProc(Text.java:2570)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4976)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2546)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3756)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1053)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+Caused by: org.eclipse.core.commands.NotHandledException: There is no handler to execute for command org.eclipse.ui.edit.paste
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:84)
+	at sun.reflect.GeneratedMethodAccessor27.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	... 49 more
+
+!ENTRY org.eclipse.ui 4 0 2014-02-17 17:01:51.936
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ide.eclipse.adt.internal.launch.AvdCompatibility.canRun(AvdCompatibility.java:50)
+	at com.android.ide.eclipse.adt.internal.launch.EmulatorConfigTab$8.accept(EmulatorConfigTab.java:399)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.fillTable(AvdSelector.java:797)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.refresh(AvdSelector.java:487)
+	at com.android.ide.eclipse.adt.internal.launch.EmulatorConfigTab.updateAvdList(EmulatorConfigTab.java:385)
+	at com.android.ide.eclipse.adt.internal.launch.EmulatorConfigTab.initializeFrom(EmulatorConfigTab.java:474)
+	at org.eclipse.debug.ui.AbstractLaunchConfigurationTab.activated(AbstractLaunchConfigurationTab.java:375)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.handleTabSelected(LaunchConfigurationTabGroupViewer.java:1325)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer$6.widgetSelected(LaunchConfigurationTabGroupViewer.java:366)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:774)
+	at org.eclipse.swt.custom.CTabFolder.setSelection(CTabFolder.java:3028)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1749)
+	at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:278)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.open(LaunchConfigurationsDialog.java:1132)
+	at org.eclipse.debug.ui.DebugUITools$2.run(DebugUITools.java:600)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(DebugUITools.java:608)
+	at org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(DebugUITools.java:542)
+	at org.eclipse.debug.ui.actions.OpenLaunchDialogAction.run(OpenLaunchDialogAction.java:81)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1053)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 17:04:53.010
+!MESSAGE Error: null
+!STACK 0
+java.io.IOException: The specified network name is no longer available
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(Unknown Source)
+	at com.android.sdklib.internal.avd.AvdManager.copyImageFile(AvdManager.java:974)
+	at com.android.sdklib.internal.avd.AvdManager.createAvd(AvdManager.java:663)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.createAvd(AvdCreationDialog.java:1123)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.okPressed(AvdCreationDialog.java:832)
+	at org.eclipse.jface.dialogs.Dialog.buttonPressed(Dialog.java:472)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.onEdit(AvdSelector.java:921)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.access$200(AvdSelector.java:84)
+	at com.android.sdkuilib.internal.widgets.AvdSelector$3.widgetSelected(AvdSelector.java:283)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1053)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+!SESSION 2014-02-17 17:12:10.218 -----------------------------------------------
+eclipse.buildId=v22.3.0-887826
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-02-17 17:12:18.451
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-02-17 17:12:18.452
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'Z:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 17:13:42.446
+!MESSAGE Error: null
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Administrator\.android\avd\Nexus4.ini (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.android.sdklib.internal.avd.AvdManager.writeIniFile(AvdManager.java:1523)
+	at com.android.sdklib.internal.avd.AvdManager.createAvdIniFile(AvdManager.java:1134)
+	at com.android.sdklib.internal.avd.AvdManager.createAvd(AvdManager.java:627)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.createAvd(AvdCreationDialog.java:1123)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.okPressed(AvdCreationDialog.java:832)
+	at org.eclipse.jface.dialogs.Dialog.buttonPressed(Dialog.java:472)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.onNew(AvdSelector.java:898)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.access$100(AvdSelector.java:84)
+	at com.android.sdkuilib.internal.widgets.AvdSelector$2.widgetSelected(AvdSelector.java:272)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1053)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 17:13:45.074
+!MESSAGE Error: null
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Administrator\.android\avd\Nexus4.ini (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.android.sdklib.internal.avd.AvdManager.writeIniFile(AvdManager.java:1523)
+	at com.android.sdklib.internal.avd.AvdManager.createAvdIniFile(AvdManager.java:1134)
+	at com.android.sdklib.internal.avd.AvdManager.createAvd(AvdManager.java:627)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.createAvd(AvdCreationDialog.java:1123)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.okPressed(AvdCreationDialog.java:832)
+	at org.eclipse.jface.dialogs.Dialog.buttonPressed(Dialog.java:472)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.onNew(AvdSelector.java:898)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.access$100(AvdSelector.java:84)
+	at com.android.sdkuilib.internal.widgets.AvdSelector$2.widgetSelected(AvdSelector.java:272)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1053)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 17:13:55.298
+!MESSAGE Error: null
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Administrator\.android\avd\Nexus4.ini (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.android.sdklib.internal.avd.AvdManager.writeIniFile(AvdManager.java:1523)
+	at com.android.sdklib.internal.avd.AvdManager.createAvdIniFile(AvdManager.java:1134)
+	at com.android.sdklib.internal.avd.AvdManager.createAvd(AvdManager.java:627)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.createAvd(AvdCreationDialog.java:1123)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.okPressed(AvdCreationDialog.java:832)
+	at org.eclipse.jface.dialogs.Dialog.buttonPressed(Dialog.java:472)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.onNew(AvdSelector.java:898)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.access$100(AvdSelector.java:84)
+	at com.android.sdkuilib.internal.widgets.AvdSelector$2.widgetSelected(AvdSelector.java:272)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1053)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 17:14:03.217
+!MESSAGE Error: null
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Administrator\.android\avd\Nexus4.ini (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.android.sdklib.internal.avd.AvdManager.writeIniFile(AvdManager.java:1523)
+	at com.android.sdklib.internal.avd.AvdManager.createAvdIniFile(AvdManager.java:1134)
+	at com.android.sdklib.internal.avd.AvdManager.createAvd(AvdManager.java:627)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.createAvd(AvdCreationDialog.java:1123)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.okPressed(AvdCreationDialog.java:832)
+	at org.eclipse.jface.dialogs.Dialog.buttonPressed(Dialog.java:472)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.onNew(AvdSelector.java:898)
+	at com.android.sdkuilib.internal.widgets.AvdSelector.access$100(AvdSelector.java:84)
+	at com.android.sdkuilib.internal.widgets.AvdSelector$2.widgetSelected(AvdSelector.java:272)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1053)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 17:14:27.160
+!MESSAGE Error: null
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Administrator\.android\avd\AVD_for_Nexus_4_by_Google.ini (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.android.sdklib.internal.avd.AvdManager.writeIniFile(AvdManager.java:1523)
+	at com.android.sdklib.internal.avd.AvdManager.createAvdIniFile(AvdManager.java:1134)
+	at com.android.sdklib.internal.avd.AvdManager.createAvd(AvdManager.java:627)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.createAvd(AvdCreationDialog.java:1123)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.okPressed(AvdCreationDialog.java:832)
+	at org.eclipse.jface.dialogs.Dialog.buttonPressed(Dialog.java:472)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.android.sdkuilib.internal.repository.ui.DeviceManagerPage.onCreateAvd(DeviceManagerPage.java:728)
+	at com.android.sdkuilib.internal.repository.ui.DeviceManagerPage.access$300(DeviceManagerPage.java:90)
+	at com.android.sdkuilib.internal.repository.ui.DeviceManagerPage$4.widgetSelected(DeviceManagerPage.java:214)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1053)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 17:14:32.023
+!MESSAGE Error: null
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Administrator\.android\avd\AVD_for_Nexus_4_by_Google.ini (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.android.sdklib.internal.avd.AvdManager.writeIniFile(AvdManager.java:1523)
+	at com.android.sdklib.internal.avd.AvdManager.createAvdIniFile(AvdManager.java:1134)
+	at com.android.sdklib.internal.avd.AvdManager.createAvd(AvdManager.java:627)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.createAvd(AvdCreationDialog.java:1123)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.okPressed(AvdCreationDialog.java:832)
+	at org.eclipse.jface.dialogs.Dialog.buttonPressed(Dialog.java:472)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.android.sdkuilib.internal.repository.ui.DeviceManagerPage.onCreateAvd(DeviceManagerPage.java:728)
+	at com.android.sdkuilib.internal.repository.ui.DeviceManagerPage.access$300(DeviceManagerPage.java:90)
+	at com.android.sdkuilib.internal.repository.ui.DeviceManagerPage$4.widgetSelected(DeviceManagerPage.java:214)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1053)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-17 17:14:39.887
+!MESSAGE Error: null
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Administrator\.android\avd\AVD_for_Nexus_4_by_Google.ini (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.android.sdklib.internal.avd.AvdManager.writeIniFile(AvdManager.java:1523)
+	at com.android.sdklib.internal.avd.AvdManager.createAvdIniFile(AvdManager.java:1134)
+	at com.android.sdklib.internal.avd.AvdManager.createAvd(AvdManager.java:627)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.createAvd(AvdCreationDialog.java:1123)
+	at com.android.sdkuilib.internal.widgets.AvdCreationDialog.okPressed(AvdCreationDialog.java:832)
+	at org.eclipse.jface.dialogs.Dialog.buttonPressed(Dialog.java:472)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.android.sdkuilib.internal.repository.ui.DeviceManagerPage.onCreateAvd(DeviceManagerPage.java:728)
+	at com.android.sdkuilib.internal.repository.ui.DeviceManagerPage.access$300(DeviceManagerPage.java:90)
+	at com.android.sdkuilib.internal.repository.ui.DeviceManagerPage$4.widgetSelected(DeviceManagerPage.java:214)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1053)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:942)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
