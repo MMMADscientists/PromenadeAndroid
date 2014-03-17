@@ -15,11 +15,14 @@ public class UserFunctions {
      
     // Testing in localhost using wamp or xampp 
     // use http://10.0.2.2/ to connect to your localhost ie http://localhost/
-    private static String loginURL = "http://localhost/API/";
-    private static String registerURL = "http://localhost/API/";
+    private static String loginURL = "http://54.186.153.0/API/";
+    private static String registerURL = "http://54.186.153.0/API/";
      
     private static String login_tag = "login";
     private static String register_tag = "register";
+    private static String houses_tag = "houses";
+    private static String rooms_tag = "rooms";
+    private static String connections_tag = "connections";
      
     // constructor
     public UserFunctions(){
@@ -85,5 +88,19 @@ public class UserFunctions {
         db.resetTables();
         return true;
     }
+    
+    /*
+     * Function to get homes based on user's name
+     */
+     public JSONObject getHomes(String username){
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        params.add(new BasicNameValuePair("tag", houses_tag));
+        params.add(new BasicNameValuePair("name", username));
+     
+       // getting JSON Object
+        JSONObject json = jsonParser.getJSONFromUrl(registerURL, params);
+        // return json
+        return json;
+     }
      
 }
