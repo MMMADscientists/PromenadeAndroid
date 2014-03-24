@@ -1,0 +1,7 @@
+package com.example.androidhive;
+
+import Activity;
+
+public class HomesActivity extends Activity {
+
+}
