@@ -70,11 +70,14 @@ public class LoginActivity extends Activity {
                             db.addUser(json_user.getString(KEY_NAME), json_user.getString(KEY_PASS), json.getString(KEY_EMAIL));                        
                              
                             // Launch Dashboard Screen
-                            Intent dashboard = new Intent(getApplicationContext(), DashboardActivity.class);
+                            Intent homes = new Intent(getApplicationContext(), HomesActivity.class);
+                            
+                            //store username for homes screen
+                             homes.putExtra("name", username);
                              
                             // Close all views before launching Dashboard
-                            dashboard.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(dashboard);
+                            homes.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(homes);
                              
                             // Close Login Screen
                             finish();
