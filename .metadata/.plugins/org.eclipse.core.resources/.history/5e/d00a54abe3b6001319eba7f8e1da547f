@@ -2,7 +2,6 @@ package com.example.androidhive.library;
  
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
  
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -36,19 +35,14 @@ public class UserFunctions {
      * @param password
      * */
     public JSONObject loginUser(String username, String password){
-    	//offload to new thread so this thing stops blowing up
-        DatabaseAccessTask dbAccess = new DatabaseAccessTask();
-        dbAccess.execute(login_tag , username , password);
-        JSONObject json = null;
-		try {
-			json = dbAccess.get();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        // Building Parameters
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        params.add(new BasicNameValuePair("tag", login_tag));
+        params.add(new BasicNameValuePair("username", username));
+        params.add(new BasicNameValuePair("password", password));
+        JSONObject json = jsonParser.getJSONFromUrl(loginURL, params);
+        // return json
+        // Log.e("JSON", json.toString());
         return json;
     }
      
@@ -60,25 +54,15 @@ public class UserFunctions {
      * */
     public JSONObject registerUser(String name, String email, String password){
         // Building Parameters
-        /*List<NameValuePair> params = new ArrayList<NameValuePair>();
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("tag", register_tag));
         params.add(new BasicNameValuePair("name", name));
         params.add(new BasicNameValuePair("email", email));
-        params.add(new BasicNameValuePair("password", password));*/
+        params.add(new BasicNameValuePair("password", password));
          
         // getting JSON Object
-        DatabaseAccessTask dbAccess = new DatabaseAccessTask();
-        dbAccess.execute(register_tag, name , email , password);
-        JSONObject json = null;
-		try {
-			json = dbAccess.get();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        JSONObject json = jsonParser.getJSONFromUrl(registerURL, params);
+        // return json
         return json;
     }
      

@@ -1,0 +1,7 @@
+package com.example.androidhive.library;
+
+import AsyncTask;
+
+public class DatabaseAccessTask extends AsyncTask {
+
+}
