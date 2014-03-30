@@ -2,9 +2,11 @@ package com.example.androidhive;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
  
 import android.app.Activity;
 import android.content.Intent;
@@ -49,74 +51,81 @@ public class HomesActivity extends Activity
 		
 		// make database call
 		UserFunctions userFunction = new UserFunctions();
-        	JSONObject json = userFunction.getHomes(username);
-        	
-        	//lists of recieved data
-        	List<int> idProperty = new List<int>();
-        	List<String> address = new List<String>();
-        	List<String> houseURL = new List<String>();
-        	
-        	 try {
-                    if (json.getString(KEY_SUCCESS) != null) {
-                        //loginErrorMsg.setText("");
-                        String res = json.getString(KEY_SUCCESS); 
-                        if(Integer.parseInt(res) == 1){
-                        	JSONArray tuples = json.getJSONArray(KEY_TUPLE);
-                        	for int i = 0; i< tuples.length(); i++){
-                        		JSONObject curTuple = tuples.get(i);
-                        		idProperty.add(curTuple.getInt(KEY_IDPROPERTY);
-                        		address.add(curTuple.getString(KEY_ADDRESS);
-                        		houseURL.add(curTuple.getString(KEY_HOUSEURL);
-                        	}
-                        }
-                            
+    	JSONObject json = userFunction.getHomes(username);
+    	
+    	//lists of recieved data
+    	List<Integer> idProperty = new ArrayList<Integer>();
+    	List<String> address = new ArrayList<String>();
+    	List<String> houseURL = new ArrayList<String>();
+    	
+    	try {
+                if (json.getString(KEY_SUCCESS) != null) {
+                    //loginErrorMsg.setText("");
+                    String res = json.getString(KEY_SUCCESS); 
+                    if(Integer.parseInt(res) == 1){
+                    	JSONArray tuples = json.getJSONArray(KEY_TUPLE);
+                    	for(int i = 0; i< tuples.length(); i++){
+                    		JSONObject curTuple = tuples.getJSONObject(i);
+                    		idProperty.add(curTuple.getInt(KEY_IDPROPERTY));
+                    		address.add(curTuple.getString(KEY_ADDRESS));
+                    		houseURL.add(curTuple.getString(KEY_HOUSEURL));
+                    	}
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                        
                 }
-         
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+     
         
 		// fill xml based on db call
-        LinearLayout ll = (LinearLayout) findViewById(R.id.homesLayout);
+        LinearLayout ll = (LinearLayout) findViewById(R.id.roomsLayout);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
         
         // may need separate file
-        for(int i = 0; i < idProperty.length(); i++)
+        for(int i = 0; i < idProperty.size(); i++)
         {
         	
             Button btn = new Button(this);
             btn.setId(i);
             final int id_ = btn.getId();
             // set text to address
-            btn.setText("property " + id_);
+            btn.setText(address.get(i).toString());
             ll.addView(btn, params);
             // fill properties based on db call
             properties.add((Button) findViewById(id_));
         }
-        */
+        
         
         Button btn = new Button(this);
-        btn.setId(idProperty.length());
+        btn.setId(idProperty.size());
         btn.setText("Add new property +");
         ll.addView(btn, params);
-        btnNewProp = (Button) findViewById(idProperty.length());
+        btnNewProp = (Button) findViewById(idProperty.size());
        
 		
 		
 		for(int i = 0; i < properties.size(); i++)
 		{
-			 properties.get(i).setOnClickListener(new View.OnClickListener() 
-			 {
+			final String addr = address.get(i);
+			final int id = idProperty.get(i);
+			properties.get(i).setOnClickListener(new View.OnClickListener() 
+			{
 
 				@Override
 				public void onClick(View arg0) {
-					// TODO Auto-generated method stub
+					// go to next page with given property selected
 					
+					Intent next = new Intent(getApplicationContext(),
+	                        RoomsActivity.class);
+					next.putExtra("addr", addr);
+					next.putExtra("id",id);
+	                startActivity(next);
 				}
 				 
-			 });
+			});
 		}
 		
 		 btnNewProp.setOnClickListener(new View.OnClickListener() 
@@ -124,12 +133,15 @@ public class HomesActivity extends Activity
 
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent i = new Intent(getApplicationContext(),
+				// create new entry in database and go to next page
+				
+				// int value = userFunctions.newHome(username);
+				
+				Intent next = new Intent(getApplicationContext(),
                         RoomsActivity.class);
-				//i.putExtra("addr", value);
-				//i.putExtra("id",value);
-                startActivity(i);
+				next.putExtra("addr", "New Property");
+				//next.putExtra("id",value);
+                startActivity(next);
 			}
 			 
 		 });

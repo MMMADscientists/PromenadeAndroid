@@ -9,31 +9,71 @@
   /**
  * check for POST request 
  */
-if (isset($_POST['tag']) && $_POST['tag'] != '') {
+    register_shutdown_function('errorHandler');
+
+function errorHandler() { 
+    $error = error_get_last();
+    $type = $error['type'];
+    $message = $error['message'];
+    if ($type = 64 && !empty($message)) {
+        echo "
+            <strong>
+              <font color=\"red\">
+              Fatal error captured:
+              </font>
+            </strong>
+        ";
+        echo "<pre>";
+        print_r($error);
+        echo "</pre>";
+    }
+} 
+ 
+if (isset($_POST['tag']) && $_POST['tag'] != '' ) {
     // get tag
     $tag = $_POST['tag'];
- 
-    // include db handler
-    require_once 'include/DB_Functions.php';
-    $db = new DB_Functions();
- 
+    $post = true;
+}
+else{
+    $tag = $_GET["tag"];
+    $post = false;
+    //echo "using GET, $tag ";
+}
+    try{
+        if(!file_exists('/var/www/API/DB_Functions.php')){
+            echo "file does not exist";
+        }
+        require_once '/var/www/API/DB_Functions.php';
+        //echo " required file included" . PHP_EOL;
+        $db = new DB_Functions();
+    }catch (Exception $e) {
+        echo 'Caught exception: ',  $e->getMessage(), "\n";
+    }
+    
+    //echo "creating response:" . PHP_EOL;
     // response Array
     $response = array("tag" => $tag, "success" => 0, "error" => 0);
  
     // check for tag type
     if ($tag == 'login') {
+        if($post){
         // Request type is check Login
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+           $name = $_POST['username'];
+           $password = $_POST['password'];
+        }
+        else{
+           $name = $_GET['username'];
+           $password = $_GET['password'];
+        }
  
         // check for username
-        $username = $db->getUserByEmailAndPassword($email, $password);
+        $username = $db->getUserByEmailAndPassword($name, $password);
         if ($username != false) {
             // username found
             // echo json with success = 1
             $response["success"] = 1;
-            $response["uid"] = $username["unique_id"];
-            $response["username"]["name"] = $username["name"];
+            $response["uid"] = $username["uid"];
+            $response["username"]["name"] = $username["username"];
             $response["username"]["email"] = $username["email"];
             //$response["username"]["created_at"] = $username["created_at"];
             //$response["username"]["updated_at"] = $username["updated_at"];
@@ -42,14 +82,24 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             // username not found
             // echo json with error = 1
             $response["error"] = 1;
-            $response["error_msg"] = "Incorrect email or password!";
+            $response["error_msg"] = "Incorrect username or password!";
             echo json_encode($response);
         }
     } else if ($tag == 'register') {
+        if($post){
         // Request type is Register new username
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+            $name = $_POST['username'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+        }
+        else{
+            $name = $_GET['username'];
+            $email = $_GET['email'];
+            $password = $_GET['password'];
+            //echo "name = $name \n";
+            //echo "email = $email \n";
+            //echo "password = $password \n";
+        }
  
         // check if username is already existed
         if ($db->isUserExisted($email)) {
@@ -63,8 +113,8 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             if ($username) {
                 // username stored successfully
                 $response["success"] = 1;
-                $response["uid"] = $username["unique_id"];
-                $response["username"]["name"] = $username["name"];
+                $response["uid"] = $username["uid"];
+                $response["username"]["name"] = $username["username"];
                 $response["username"]["email"] = $username["email"];
                 //$response["username"]["created_at"] = $username["created_at"];
                 //$response["username"]["updated_at"] = $username["updated_at"];
@@ -76,10 +126,28 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
                 echo json_encode($response);
             }
         }
-    } else {
+    }else if ($tag == "houses"){
+         if($post){
+             $name = $_POST["username"];
+             $tuples = $db->getHouseData($name);
+         }
+         else{
+             $name = $_POST["username"];
+             $tuples = $db->getHouseData($name);
+         }
+         
+         if($username){
+             $response["success"] = 1;
+             $response["tuples"] = $tuples;
+             echo json_encode($response);
+         }else{
+             $response["error"] = 1;
+             $response["error_code"] = 0;
+             $response["error_msg"] = "No data found";
+             echo json_encode($response);
+         }
+    
+    }else {
         echo "Invalid Request";
     }
-} else {
-    echo "Access Denied";
-}
 ?>

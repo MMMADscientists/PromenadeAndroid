@@ -1,8 +1,10 @@
 package com.example.androidhive;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
  
@@ -23,33 +25,65 @@ public class RoomsActivity extends Activity
 {
 	List<Button> rooms;
 	Button btnNewRoom;
+	Button btnChangeAddr;
+    EditText inputAddr;
+	
 	private static String address;
 	private static String dbID;
+	
+	private static String KEY_SUCCESS = "success";
+    private static String KEY_ERROR = "error";
+    private static String KEY_ERROR_MSG = "error_msg";
+    private static String KEY_TUPLE = "tuples";
+    private static String KEY_IDROOM = "idRoom";
+    private static String KEY_ROOMNAME = "NameRoom";
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.homes);
+		setContentView(R.layout.rooms);
 		
 		
 		// may need to account for newly registered user here
 		Intent intent = getIntent();
-		address = intent.getStringExtra("addr");// pull from previous page
+		// pull info from previous page
+		address = intent.getStringExtra("addr");
+		inputAddr = (EditText) findViewById(R.id.addr);
+		inputAddr.setText(address);
+		
 		dbID = intent.getStringExtra("id");
+		
+		btnChangeAddr = (Button) findViewById(R.id.btnUpdate);
 		
 		// make database call
 		UserFunctions userFunction = new UserFunctions();
-        JSONObject json = userFunction.getRooms(dbID);
-         
-        // parse json to pull property info
-        for(int i = 0; i < json.length(); i++)
-        {
-        	
-        }
+		JSONObject json = userFunction.getRooms(dbID);
+    	
+    	//lists of recieved data
+    	List<Integer> idRoom = new ArrayList<Integer>();
+    	List<String> roomName = new ArrayList<String>();
+    	
+    	try {
+                if (json.getString(KEY_SUCCESS) != null) {
+                    //loginErrorMsg.setText("");
+                    String res = json.getString(KEY_SUCCESS); 
+                    if(Integer.parseInt(res) == 1){
+                    	JSONArray tuples = json.getJSONArray(KEY_TUPLE);
+                    	for(int i = 0; i< tuples.length(); i++){
+                    		JSONObject curTuple = tuples.getJSONObject(i);
+                    		idRoom.add(curTuple.getInt(KEY_IDROOM));
+                    		roomName.add(curTuple.getString(KEY_ROOMNAME));
+                    	}
+                    }
+                        
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         
 		// fill xml based on db call
-        LinearLayout ll = (LinearLayout) findViewById(R.id.homesLayout);
+        LinearLayout ll = (LinearLayout) findViewById(R.id.roomsLayout);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -62,7 +96,7 @@ public class RoomsActivity extends Activity
             btn.setId(i);
             final int id_ = btn.getId();
             // set text to address
-            btn.setText("room " + id_);
+            btn.setText(roomName.get(i).toString());
             ll.addView(btn, params);
             // fill properties based on db call
             rooms.add((Button) findViewById(id_));
@@ -75,17 +109,33 @@ public class RoomsActivity extends Activity
         ll.addView(btn, params);
         btnNewRoom = (Button) findViewById(json.length());
        
-		
+        btnChangeAddr.setOnClickListener(new View.OnClickListener() 
+		{
+
+			@Override
+			public void onClick(View arg0) {
+				// change address name in database
+				String newAddr = inputAddr.getText().toString();
+				// userFunction.changeAddr(newAddr);
+			}
+			 
+		 });
 		
 		for(int i = 0; i < rooms.size(); i++)
 		{
+			final String name = roomName.get(i);
+			final int id = idRoom.get(i);
 			 rooms.get(i).setOnClickListener(new View.OnClickListener() 
 			 {
 
 				@Override
 				public void onClick(View arg0) {
-					// TODO Auto-generated method stub
-					
+					//  go to next page with given room selected
+					/*Intent next = new Intent(getApplicationContext(),
+	                        EditActivity.class);
+					next.putExtra("name", name);
+					next.putExtra("id",id);
+	                startActivity(next);*/
 				}
 				 
 			 });
@@ -96,7 +146,14 @@ public class RoomsActivity extends Activity
 
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
+				// create new room and go to edit page
+				/* int value = userFunctions.newRoom(dbID);
+				
+				Intent next = new Intent(getApplicationContext(),
+                        EditActivity.class);
+				next.putExtra("name", "New Room");
+				next.putExtra("id",value);
+                startActivity(next);*/
 				
 			}
 			 

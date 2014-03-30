@@ -1,32 +1,33 @@
 <?php
- 
+require_once 'config.php';
+
 class DB_Functions {
- 
-    private $db;
- 
-    //put your code here
+    // connecting to mysql
+    private $mysql;// = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD,DB_DATABASE);
+
     // constructor
     function __construct() {
+        $this -> mysql = new mysqli(DB_HOST, DB_USER, DB_PASSWORD,DB_DATABASE)or die("Error " . mysqli_error($mysql));
+        /*if ($this -> mysql->connect_errno) {
+            echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+        }
+        else{
+            echo "Connected to MySQL" . PHP_EOL;
+        }*/
+        /*try{
         require_once 'DB_Connect.php';
         // connecting to database
         $this->db = new DB_Connect();
-        $this->db->connect();
+        $this->mysql = $this->db->connect();
+        }catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+       }*/
+    
     }
  
     // destructor
     function __destruct() {
          
-    }
-    
-    /**
-     *  Verify user's password
-     *  Returns true or false
-     *  TODO: hash passwords, salt passwords
-     */
-    public function checkPass($user, $pass){
-        $DBPass = mysql_query("SELECT password FROM User WHERE username = '$user'");
-        if($DBPAss == $pass) return true;
-        else return false;
     }
  
     /**
@@ -35,18 +36,21 @@ class DB_Functions {
      * returns user details
      */
     public function storeUser($name, $email, $password) {
-        $uuid = uniqid('', true);
+        //$uuid = uniqid('', true);
         $hash = $this->hashSSHA($password);
         $encrypted_password = $hash["encrypted"]; // encrypted password
         $salt = $hash["salt"]; // salt
-        $result = mysql_query("INSERT INTO users(unique_id, name, email, encrypted_password, salt, created_at) VALUES('$uuid', '$name', '$email', '$encrypted_password', '$salt', NOW())");
+        //echo PHP_EOL . "INSERT INTO User(username, password, email, salt) VALUES( '$name', '$password', '$email', '$salt' )";
+        $result = $this->mysql->query("INSERT INTO User(username, password, email, salt) VALUES( '$name', '$password', '$email', '$salt' )");
         // check for successful store
         if ($result) {
             // get user details 
-            $uid = mysql_insert_id(); // last inserted id
-            $result = mysql_query("SELECT * FROM users WHERE uid = $uid");
+            $uid = $this->mysql->insert_id; // last inserted id
+            $result = $this->mysql->query("SELECT * FROM User WHERE uid = $uid");
             // return user details
-            return mysql_fetch_array($result);
+            //echo PHP_EOL;
+            //echo  json_encode($result->fetch_array(MYSQLI_ASSOC));
+            return $result->fetch_array(MYSQLI_ASSOC);
         } else {
             return false;
         }
@@ -55,14 +59,15 @@ class DB_Functions {
     /**
      * Get user by email and password
      */
-    public function getUserByEmailAndPassword($email, $password) {
-        $result = mysql_query("SELECT * FROM users WHERE email = '$email'") or die(mysql_error());
+    public function getUserByEmailAndPassword($username, $password) {
+     //echo"email = $email" . PHP_EOL . "password = $password" . PHP_EOL;
+        $result = $this->mysql->query("SELECT * FROM User WHERE username = '$username'") or die(mysql_error());
         // check for result 
-        $no_of_rows = mysql_num_rows($result);
+        $no_of_rows = $this->mysql->affected_rows;
         if ($no_of_rows > 0) {
-            $result = mysql_fetch_array($result);
+            $result = $result->fetch_array(MYSQLI_ASSOC);
             $salt = $result['salt'];
-            $encrypted_password = $result['encrypted_password'];
+            $encrypted_password = $result['password'];
             $hash = $this->checkhashSSHA($salt, $password);
             // check for password equality
             if ($encrypted_password == $hash) {
@@ -78,14 +83,28 @@ class DB_Functions {
     /**
      * Check user is existed or not
      */
-    public function isUserExisted($email) {
-        $result = mysql_query("SELECT email from users WHERE email = '$email'");
-        $no_of_rows = mysql_num_rows($result);
+    public function isUserExisted($username) {
+        $result = $this->mysql->query("SELECT email from User WHERE username = '$username'");
+        if(!$result){return false;}
+        $no_of_rows = $this->mysql->affected_rows;
         if ($no_of_rows > 0) {
             // user existed 
             return true;
         } else {
             // user not existed
+            return false;
+        }
+    }
+    
+    public function getHouseData($name){
+        $result = $this->mysql->query("SELECT * FROM Property WHERE username = '$name'");
+        $no_of_rows = mysql_num_rows($result);
+        if(no_of_rows > 0){
+             //user has houses
+             return $result;
+        }
+        else{
+            //user has no homes created
             return false;
         }
     }
@@ -99,7 +118,7 @@ class DB_Functions {
  
         $salt = sha1(rand());
         $salt = substr($salt, 0, 10);
-        $encrypted = base64_encode(sha1($password . $salt, true) . $salt);
+        $encrypted = $this->checkhashSSHA($salt,$password);
         $hash = array("salt" => $salt, "encrypted" => $encrypted);
         return $hash;
     }
@@ -111,9 +130,10 @@ class DB_Functions {
      */
     public function checkhashSSHA($salt, $password) {
  
-        $hash = base64_encode(sha1($password . $salt, true) . $salt);
+        //$hash = base64_encode(sha1($password . $salt) . $salt);
  
-        return $hash;
+        //return $hash;
+        return $password;
     }
  
 }
