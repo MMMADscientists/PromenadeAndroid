@@ -173,5 +173,13 @@ public class UserFunctions {
 		}
         return json;
     }
+    
+     public JSONObject addProperty(String address, String username, String houseURL, int defaultRoom){
+     	
+     }
+     
+     public JSONObject addRoom(String name, int propertyID, String roomURL){
+     	
+     }
      
 }
