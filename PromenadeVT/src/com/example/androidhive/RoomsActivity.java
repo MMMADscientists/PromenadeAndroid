@@ -54,7 +54,7 @@ public class RoomsActivity extends Activity
 		
 		dbID = intent.getStringExtra("id");
 		
-		btnChangeAddr = (Button) findViewById(R.id.btnUpdate);
+		btnChangeAddr = (Button) findViewById(R.id.btnUpdateP);
 		
 		// make database call
 		UserFunctions userFunction = new UserFunctions();

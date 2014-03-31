@@ -1,0 +1,105 @@
+package com.example.androidhive;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+ 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.example.androidhive.library.DatabaseHandler;
+import com.example.androidhive.library.UserFunctions;
+
+public class EditActivity extends Activity 
+{
+    EditText inputAddr;
+	Button btnChangeName;
+	Button btnTakePhoto;
+	Button btnAddConnection;
+	Button btnViewRoom;
+	
+	private static String roomName;
+	private static String dbID;
+	
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.edit_room);
+		
+		
+		// may need to account for newly registered user here
+		Intent intent = getIntent();
+		// pull info from previous page
+		roomName = intent.getStringExtra("name");
+		dbID = intent.getStringExtra("id");
+		
+		btnChangeName = (Button) findViewById(R.id.btnUpdateR);
+    	
+    	//lists of recieved data
+    	List<Integer> idRoom = new ArrayList<Integer>();
+    	List<String> roomName = new ArrayList<String>();
+    	
+        btnChangeName.setOnClickListener(new View.OnClickListener() 
+		{
+
+			@Override
+			public void onClick(View arg0) {
+				// change room name in database
+				
+			}
+			 
+		 });
+		
+		for(int i = 0; i < rooms.size(); i++)
+		{
+			final String name = roomName.get(i);
+			final int id = idRoom.get(i);
+			 rooms.get(i).setOnClickListener(new View.OnClickListener() 
+			 {
+
+				@Override
+				public void onClick(View arg0) {
+					//  go to next page with given room selected
+					/*Intent next = new Intent(getApplicationContext(),
+	                        EditActivity.class);
+					next.putExtra("name", name);
+					next.putExtra("id",id);
+	                startActivity(next);*/
+				}
+				 
+			 });
+		}
+		
+		 btnNewRoom.setOnClickListener(new View.OnClickListener() 
+		 {
+
+			@Override
+			public void onClick(View arg0) {
+				// create new room and go to edit page
+				/* int value = userFunctions.newRoom(dbID);
+				
+				Intent next = new Intent(getApplicationContext(),
+                        EditActivity.class);
+				next.putExtra("name", "New Room");
+				next.putExtra("id",value);
+                startActivity(next);*/
+				
+			}
+			 
+		 });
+	}
+}
+
