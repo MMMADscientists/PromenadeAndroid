@@ -24,7 +24,9 @@ public class UserFunctions {
     private static String houses_tag = "houses";
     private static String rooms_tag = "rooms";
     private static String connections_tag = "connections";
-     
+    private static String property_rename_tag = "renameProperty";
+    private static String room_rename_tag = "renameRoom";
+    
     // constructor
     public UserFunctions(){
         jsonParser = new JSONParser();
@@ -109,14 +111,67 @@ public class UserFunctions {
      * Function to get homes based on user's name
      */
      public JSONObject getHomes(String username){
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
-        params.add(new BasicNameValuePair("tag", houses_tag));
-        params.add(new BasicNameValuePair("name", username));
-     
-       // getting JSON Object
-        JSONObject json = jsonParser.getJSONFromUrl(registerURL, params);
-        // return json
+	DatabaseAccessTask dbAccess = new DatabaseAccessTask();
+        dbAccess.execute(houses_tag, username);
+        JSONObject json = null;
+		try {
+			json = dbAccess.get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return json;
-     }
+    }
+    
+    public JSONObject getRoom(int propertyID){
+	DatabaseAccessTask dbAccess = new DatabaseAccessTask();
+        dbAccess.execute(rooms_tag, propertyID.toString());
+        JSONObject json = null;
+		try {
+			json = dbAccess.get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return json;
+    }
+    
+    public JSONObject renameHome(int propertyID, String newName){
+	DatabaseAccessTask dbAccess = new DatabaseAccessTask();
+        dbAccess.execute(property_rename_tag, propertyID.toString(), newName);
+        JSONObject json = null;
+		try {
+			json = dbAccess.get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return json;
+    }
+    
+    public JSONObject renameRoom(int roomID, String newName){
+	DatabaseAccessTask dbAccess = new DatabaseAccessTask();
+        dbAccess.execute(room_rename_tag, roomID.toString(), newName);
+        JSONObject json = null;
+		try {
+			json = dbAccess.get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return json;
+    }
      
 }
