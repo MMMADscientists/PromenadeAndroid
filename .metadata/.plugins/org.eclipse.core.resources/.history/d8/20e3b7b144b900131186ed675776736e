@@ -52,12 +52,7 @@ public class RoomsActivity extends Activity
 		inputAddr = (EditText) findViewById(R.id.addr);
 		inputAddr.setText(address);
 		
-		dbID = intent.getIntExtra("id", -1);
-		
-		if(dbID == -1)
-		{
-			// error no database identifier
-		}
+		dbID = intent.getStringExtra("id");
 		
 		btnChangeAddr = (Button) findViewById(R.id.btnUpdateP);
 		

@@ -134,13 +134,14 @@ public class HomesActivity extends Activity
 			@Override
 			public void onClick(View arg0) {
 				// create new entry in database and go to next page
+				UserFunctions userFunction = new UserFunctions();
+				JSONObject jsonID = userFunction.addProperty("New Property",username,null,0);
 				
-				// int value = userFunctions.newHome(username);
-				
+				int value = (int) jsonID.getJSONArray(KEY_TUPLE).getJSONObject(0).getInt(KEY_IDPROPERTY);
 				Intent next = new Intent(getApplicationContext(),
                         RoomsActivity.class);
 				next.putExtra("addr", "New Property");
-				//next.putExtra("id",value);
+				next.putExtra("id",value);
                 startActivity(next);
 			}
 			 

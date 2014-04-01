@@ -65,7 +65,7 @@ public class EditActivity extends Activity
 				// change room name in database
 				UserFunctions userFunction = new UserFunctions();
 				String newName = inputName.getText().toString();
-				userFunction.renameRoom(dbID,newName);
+				// userFunction.changeRoomName(newName);
 			}
 			 
 		 });

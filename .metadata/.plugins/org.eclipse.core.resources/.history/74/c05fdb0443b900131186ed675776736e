@@ -29,7 +29,7 @@ public class RoomsActivity extends Activity
     EditText inputAddr;
 	
 	private static String address;
-	private static int dbID;
+	private static String dbID;
 	
 	private static String KEY_SUCCESS = "success";
     private static String KEY_ERROR = "error";
@@ -52,12 +52,7 @@ public class RoomsActivity extends Activity
 		inputAddr = (EditText) findViewById(R.id.addr);
 		inputAddr.setText(address);
 		
-		dbID = intent.getIntExtra("id", -1);
-		
-		if(dbID == -1)
-		{
-			// error no database identifier
-		}
+		dbID = intent.getStringExtra("id");
 		
 		btnChangeAddr = (Button) findViewById(R.id.btnUpdateP);
 		
@@ -121,8 +116,7 @@ public class RoomsActivity extends Activity
 			public void onClick(View arg0) {
 				// change address name in database
 				String newAddr = inputAddr.getText().toString();
-				UserFunctions userFunction = new UserFunctions();
-				userFunction.renameHome(dbID,newAddr);
+				// userFunction.changeAddr(newAddr);
 			}
 			 
 		 });
@@ -137,11 +131,11 @@ public class RoomsActivity extends Activity
 				@Override
 				public void onClick(View arg0) {
 					//  go to next page with given room selected
-					Intent next = new Intent(getApplicationContext(),
+					/*Intent next = new Intent(getApplicationContext(),
 	                        EditActivity.class);
 					next.putExtra("name", name);
 					next.putExtra("id",id);
-	                startActivity(next);/**/
+	                startActivity(next);*/
 				}
 				 
 			 });
@@ -153,15 +147,13 @@ public class RoomsActivity extends Activity
 			@Override
 			public void onClick(View arg0) {
 				// create new room and go to edit page
-				UserFunctions userFunction = new UserFunctions();
-				JSONObject jsonID = userFunction.addRoom("New Room",dbID,null);
+				/* int value = userFunctions.newRoom(dbID);
 				
-				int value = (int) jsonID.getJSONArray(KEY_TUPLE).getJSONObject(0).getInt(KEY_IDROOM);
 				Intent next = new Intent(getApplicationContext(),
                         EditActivity.class);
 				next.putExtra("name", "New Room");
 				next.putExtra("id",value);
-                startActivity(next);/**/
+                startActivity(next);*/
 				
 			}
 			 

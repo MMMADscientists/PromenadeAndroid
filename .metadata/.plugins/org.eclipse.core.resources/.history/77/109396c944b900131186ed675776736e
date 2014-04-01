@@ -30,7 +30,7 @@ public class EditActivity extends Activity
 	Button btnViewRoom;
 	
 	private static String roomName;
-	private static int dbID;
+	private static String dbID;
 	
 	
 	@Override
@@ -46,12 +46,8 @@ public class EditActivity extends Activity
 		roomName = intent.getStringExtra("name");
 		inputName = (EditText) findViewById(R.id.nameRoom);
 		inputName.setText(roomName);
-		dbID = intent.getIntExtra("id", -1);
+		dbID = intent.getStringExtra("id");
 		
-		if(dbID == -1)
-		{
-			// error no database identifier
-		}
 		btnChangeName = (Button) findViewById(R.id.btnUpdateR);
 		btnTakePhoto = (Button) findViewById(R.id.btnPhoto);
 		btnAddConnection = (Button) findViewById(R.id.btnConnection);
@@ -65,7 +61,7 @@ public class EditActivity extends Activity
 				// change room name in database
 				UserFunctions userFunction = new UserFunctions();
 				String newName = inputName.getText().toString();
-				userFunction.renameRoom(dbID,newName);
+				// userFunction.changeRoomName(newName);
 			}
 			 
 		 });
