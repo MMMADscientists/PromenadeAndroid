@@ -127,7 +127,7 @@ public class HomesActivity extends Activity
 		for(int i = 0; i < properties.size(); i++)
 		{
 			final String addr = address.get(i);
-			final int id = idProperty.get(i);
+			final Integer id = idProperty.get(i);
 			properties.get(i).setOnClickListener(new View.OnClickListener() 
 			{
 
@@ -151,9 +151,15 @@ public class HomesActivity extends Activity
 			@Override
 			public void onClick(View arg0) {
 				// create new entry in database and go to next page
-				JSONObject jsonID = userFunctions.addProperty("New Property",username,null,0);
+				JSONObject jsonID = userFunctions.addProperty("New Property",username,null,"0");
 
-				int value = (int) jsonID.getJSONArray(KEY_TUPLE).getJSONObject(0).getInt(KEY_IDPROPERTY);
+				Integer value = -1;
+				try {
+					value = jsonID.getJSONArray(KEY_TUPLE).getJSONObject(0).getInt(KEY_IDPROPERTY);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				Intent next = new Intent(getApplicationContext(),
                         RoomsActivity.class);
 				next.putExtra("addr", "New Property");

@@ -138,7 +138,7 @@ public class RoomsActivity extends Activity
 		for(int i = 0; i < rooms.size(); i++)
 		{
 			final String name = roomName.get(i);
-			final int id = idRoom.get(i);
+			final Integer id = idRoom.get(i);
 			 rooms.get(i).setOnClickListener(new View.OnClickListener() 
 			 {
 
@@ -163,7 +163,13 @@ public class RoomsActivity extends Activity
 				// create new room and go to edit page
 				JSONObject jsonID = userFunctions.addRoom("New Room",dbID,null);
 
-				int value = (int) jsonID.getJSONArray(KEY_TUPLE).getJSONObject(0).getInt(KEY_IDROOM);
+				Integer value = -1;
+				try {
+					value = jsonID.getJSONArray(KEY_TUPLE).getJSONObject(0).getInt(KEY_IDROOM);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				Intent next = new Intent(getApplicationContext(),
                         EditActivity.class);
 				next.putExtra("name", "New Room");
