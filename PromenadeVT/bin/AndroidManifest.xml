@@ -13,23 +13,32 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <!-- Login Activity -->
         <activity
             android:label="@string/app_name"
-            android:name=".DashboardActivity" >
+            android:name=".LoginActivity">
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
  
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- homes activity -->
         <activity
-            android:label="Login Account"
-            android:name=".LoginActivity"></activity>
+            android:label="Homes activity"
+            android:name=".HomesActivity">
+        </activity>
  
         <!--  Register Activity -->
         <activity
             android:label="Register New Account"
-            android:name=".RegisterActivity"></activity>
+            android:name=".RegisterActivity">
+        </activity>
+        <!-- Rooms Activity -->
+        <activity
+            android:label="Choose Room"
+            android:name=".RoomsActivity">
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

@@ -41,12 +41,16 @@ public class DatabaseAccessTask extends android.os.AsyncTask<String, Void, JSONO
 		if(params[0] == houses_tag){
 			List<NameValuePair> param = new ArrayList<NameValuePair>();
 			param.add(new BasicNameValuePair("tag", params[0]));
-			param.add(new BasicNameValuePair("houses", params[0]));
+			param.add(new BasicNameValuePair("username", params[1]));
+			JSONObject json = jsonParser.getJSONFromUrl(loginURL, param);
+        	return json;
 		}//rooms
 		else if(params[0] == rooms_tag){
 			List<NameValuePair> param = new ArrayList<NameValuePair>();
 			param.add(new BasicNameValuePair("tag", params[0]));
-			param.add(new BasicNameValuePair("propertyID", params[0]));
+			param.add(new BasicNameValuePair("propertyID", params[1]));
+			JSONObject json = jsonParser.getJSONFromUrl(loginURL, param);
+        	return json;
 		}//rename property
 		else if(params[0] == property_rename_tag){
 			List<NameValuePair> param = new ArrayList<NameValuePair>();
@@ -64,7 +68,7 @@ public class DatabaseAccessTask extends android.os.AsyncTask<String, Void, JSONO
         		JSONObject json = jsonParser.getJSONFromUrl(loginURL, param);
 	        	return json;
 		}//login
-		else if(count == 3){
+		else if(params[0] == login_tag){
 			List<NameValuePair> param = new ArrayList<NameValuePair>();
 	        	param.add(new BasicNameValuePair("tag", params[0]));
 	        	param.add(new BasicNameValuePair("username", params[1]));
@@ -72,7 +76,7 @@ public class DatabaseAccessTask extends android.os.AsyncTask<String, Void, JSONO
 	        	JSONObject json = jsonParser.getJSONFromUrl(loginURL, param);
 	        	return json;
 		}//register
-		else if(count == 4){
+		else if(params[0] == register_tag){
 			List<NameValuePair> param = new ArrayList<NameValuePair>();
 	        param.add(new BasicNameValuePair("tag", params[0])); //tag
 	        param.add(new BasicNameValuePair("username", params[1]));  //username

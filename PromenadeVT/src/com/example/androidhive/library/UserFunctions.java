@@ -126,9 +126,9 @@ public class UserFunctions {
         return json;
     }
     
-    public JSONObject getRoom(int propertyID){
+    public JSONObject getRooms(String propertyID){
 	DatabaseAccessTask dbAccess = new DatabaseAccessTask();
-        dbAccess.execute(rooms_tag, propertyID.toString());
+        dbAccess.execute(rooms_tag, propertyID);
         JSONObject json = null;
 		try {
 			json = dbAccess.get();
@@ -142,9 +142,9 @@ public class UserFunctions {
         return json;
     }
     
-    public JSONObject renameHome(int propertyID, String newName){
+    public JSONObject renameHome(String propertyID, String newName){
 	DatabaseAccessTask dbAccess = new DatabaseAccessTask();
-        dbAccess.execute(property_rename_tag, propertyID.toString(), newName);
+        dbAccess.execute(property_rename_tag, propertyID, newName);
         JSONObject json = null;
 		try {
 			json = dbAccess.get();
@@ -158,9 +158,9 @@ public class UserFunctions {
         return json;
     }
     
-    public JSONObject renameRoom(int roomID, String newName){
+    public JSONObject renameRoom(String roomID, String newName){
 	DatabaseAccessTask dbAccess = new DatabaseAccessTask();
-        dbAccess.execute(room_rename_tag, roomID.toString(), newName);
+        dbAccess.execute(room_rename_tag, roomID, newName);
         JSONObject json = null;
 		try {
 			json = dbAccess.get();
@@ -174,11 +174,13 @@ public class UserFunctions {
         return json;
     }
     
-     public JSONObject addProperty(String address, String username, String houseURL, int defaultRoom){
+     public JSONObject addProperty(String address, String username, String houseURL, String defaultRoom){
+		return null;
      	
      }
      
-     public JSONObject addRoom(String name, int propertyID, String roomURL){
+     public JSONObject addRoom(String name, String propertyID, String roomURL){
+		return null;
      	
      }
      

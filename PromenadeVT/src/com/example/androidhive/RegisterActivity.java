@@ -68,11 +68,12 @@ public class RegisterActivity extends Activity {
                             // Clear all previous data in database
                             userFunction.logoutUser(getApplicationContext());
                             db.addUser(json_user.getString(KEY_NAME), password, json_user.getString(KEY_EMAIL));                        
-                            // Launch Dashboard Screen
-                            Intent dashboard = new Intent(getApplicationContext(), DashboardActivity.class);
-                            // Close all views before launching Dashboard
-                            dashboard.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(dashboard);
+                            // Launch homes Screen
+                            Intent homes = new Intent(getApplicationContext(), HomesActivity.class);
+                            // Close all views before launching homes
+                            homes.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            homes.putExtra("name", name);
+                            startActivity(homes);
                             // Close Registration Screen
                             finish();
                         }else{
