@@ -138,7 +138,7 @@ public class HomesActivity extends Activity
 					Intent next = new Intent(getApplicationContext(),
 	                        RoomsActivity.class);
 					next.putExtra("addr", addr);
-					next.putExtra("id",id);
+					next.putExtra("id",id.toString());
 	                startActivity(next);
 				}
 				 
@@ -151,13 +151,13 @@ public class HomesActivity extends Activity
 			@Override
 			public void onClick(View arg0) {
 				// create new entry in database and go to next page
-				
-				// int value = userFunctions.newHome(username);
-				
+				JSONObject jsonID = userFunctions.addProperty("New Property",username,null,0);
+
+				int value = (int) jsonID.getJSONArray(KEY_TUPLE).getJSONObject(0).getInt(KEY_IDPROPERTY);
 				Intent next = new Intent(getApplicationContext(),
                         RoomsActivity.class);
 				next.putExtra("addr", "New Property");
-				//next.putExtra("id",value);
+				next.putExtra("id",value.toString());
                 startActivity(next);
 			}
 			 
