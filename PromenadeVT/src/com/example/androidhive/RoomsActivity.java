@@ -130,7 +130,7 @@ public class RoomsActivity extends Activity
 			public void onClick(View arg0) {
 				// change address name in database
 				String newAddr = inputAddr.getText().toString();
-				userFunction.renameHome(dbID,newAddr);
+				userFunctions.renameHome(dbID,newAddr);
 			}
 			 
 		 });
@@ -145,11 +145,11 @@ public class RoomsActivity extends Activity
 				@Override
 				public void onClick(View arg0) {
 					//  go to next page with given room selected
-					/*Intent next = new Intent(getApplicationContext(),
+					Intent next = new Intent(getApplicationContext(),
 	                        EditActivity.class);
 					next.putExtra("name", name);
-					next.putExtra("id",id);
-	                startActivity(next);*/
+					next.putExtra("id",id.toString());
+	                startActivity(next);
 				}
 				 
 			 });
@@ -161,13 +161,14 @@ public class RoomsActivity extends Activity
 			@Override
 			public void onClick(View arg0) {
 				// create new room and go to edit page
-				/* int value = userFunctions.newRoom(dbID);
-				
+				JSONObject jsonID = userFunctions.addRoom("New Room",dbID,null);
+
+				int value = (int) jsonID.getJSONArray(KEY_TUPLE).getJSONObject(0).getInt(KEY_IDROOM);
 				Intent next = new Intent(getApplicationContext(),
                         EditActivity.class);
 				next.putExtra("name", "New Room");
-				next.putExtra("id",value);
-                startActivity(next);*/
+				next.putExtra("id",value.toString());
+                startActivity(next);
 				
 			}
 			 
