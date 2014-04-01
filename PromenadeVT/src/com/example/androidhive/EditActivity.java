@@ -29,6 +29,8 @@ public class EditActivity extends Activity
 	Button btnAddConnection;
 	Button btnViewRoom;
 	
+	 private static String KEY_IDPROPERTY = "idProperty";
+	 
 	private static String roomName;
 	private static String dbID;
 	
@@ -61,7 +63,8 @@ public class EditActivity extends Activity
 				// change room name in database
 				UserFunctions userFunction = new UserFunctions();
 				String newName = inputName.getText().toString();
-				// userFunction.changeRoomName(newName);
+				userFunction.renameRoom(dbID,newName);
+
 			}
 			 
 		 });
