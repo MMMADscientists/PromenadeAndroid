@@ -39,7 +39,9 @@ public class RoomsActivity extends Activity
     private static String KEY_ERROR_MSG = "error_msg";
     private static String KEY_TUPLE = "tuples";
     private static String KEY_IDROOM = "idRoom";
-    private static String KEY_ROOMNAME = "NameRoom";
+    private static String KEY_ROOMNAME = "name";
+    private static String KEY_ROOMURL = "roomURL";
+    private static String KEY_IDPROPERTY = "idProperty";
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) 
@@ -70,6 +72,7 @@ public class RoomsActivity extends Activity
     	//lists of recieved data
     	List<Integer> idRoom = new ArrayList<Integer>();
     	List<String> roomName = new ArrayList<String>();
+    	List<String> roomURL = new ArrayList<String>();
     	
     	try {
                 if (json.getString(KEY_SUCCESS) != null) {
@@ -81,6 +84,7 @@ public class RoomsActivity extends Activity
                     		JSONObject curTuple = tuples.getJSONObject(i);
                     		idRoom.add(curTuple.getInt(KEY_IDROOM));
                     		roomName.add(curTuple.getString(KEY_ROOMNAME));
+                    		roomURL.add(curtuple.getString(KEY_ROOMURL));
                     	}
                     }
                         
