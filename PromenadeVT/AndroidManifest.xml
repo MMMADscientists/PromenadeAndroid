@@ -25,7 +25,7 @@
         </activity>
         <!-- homes activity -->
         <activity
-            android:label="Homes activity"
+            android:label="Properties"
             android:name=".HomesActivity">
         </activity>
  
@@ -38,6 +38,11 @@
         <activity
             android:label="Choose Room"
             android:name=".RoomsActivity">
+        </activity>
+        <!-- Edit Activity -->
+        <activity
+            android:label="Edit Room"
+            android:name=".EditActivity">
         </activity>
     </application>
 

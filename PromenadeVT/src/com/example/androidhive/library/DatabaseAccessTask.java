@@ -28,6 +28,9 @@ public class DatabaseAccessTask extends android.os.AsyncTask<String, Void, JSONO
 	    private static String connections_tag = "connections";
 	    private static String property_rename_tag = "renameProperty";
 	    private static String room_rename_tag = "renameRoom";
+	    private static String house_create_tag = "createHouse";
+	    private static String room_create_tag = "createRoom";
+	    
 
 	private static String loginURL = "http://54.186.153.0/API/index.php";
     private static String registerURL = "http://54.186.153.0/API/index.php";
@@ -84,6 +87,24 @@ public class DatabaseAccessTask extends android.os.AsyncTask<String, Void, JSONO
 	        param.add(new BasicNameValuePair("password", params[3]));  //password
 	        JSONObject json = jsonParser.getJSONFromUrl(loginURL, param);
 	        return json;
+		}//String address, String username, String houseURL, String defaultRoom
+		else if(params[0] == house_create_tag){
+			List<NameValuePair> param = new ArrayList<NameValuePair>();
+	        param.add(new BasicNameValuePair("tag", params[0])); //tag
+	        param.add(new BasicNameValuePair("address", params[1]));
+	        param.add(new BasicNameValuePair("username", params[2]));
+	        param.add(new BasicNameValuePair("houseURL", params[3]));
+	        param.add(new BasicNameValuePair("defaultRoom", params[4]));
+	        JSONObject json = jsonParser.getJSONFromUrl(loginURL, param);
+	        return json;
+		}//String name, String propertyID, String roomURL
+		else if(params[0] == room_create_tag){
+			List<NameValuePair> param = new ArrayList<NameValuePair>();
+	        param.add(new BasicNameValuePair("tag", params[0])); //tag
+	        param.add(new BasicNameValuePair("name", params[1]));
+	        param.add(new BasicNameValuePair("propertyID", params[2]));
+	        param.add(new BasicNameValuePair("roomURL", params[3]));
+	        JSONObject json = jsonParser.getJSONFromUrl(loginURL, param);
 		}
 		return null;
 	}

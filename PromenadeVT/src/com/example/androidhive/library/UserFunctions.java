@@ -26,6 +26,8 @@ public class UserFunctions {
     private static String connections_tag = "connections";
     private static String property_rename_tag = "renameProperty";
     private static String room_rename_tag = "renameRoom";
+    private static String house_create_tag = "createHouse";
+    private static String room_create_tag = "createRoom";
     
     // constructor
     public UserFunctions(){
@@ -175,12 +177,37 @@ public class UserFunctions {
     }
     
      public JSONObject addProperty(String address, String username, String houseURL, String defaultRoom){
-		return null;
+    	 DatabaseAccessTask dbAccess = new DatabaseAccessTask();
+         dbAccess.execute(house_create_tag, address, username, houseURL, defaultRoom);
+         JSONObject json = null;
+ 		try {
+ 			json = dbAccess.get();
+ 		} catch (InterruptedException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		} catch (ExecutionException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+         return json;
      	
      }
      
      public JSONObject addRoom(String name, String propertyID, String roomURL){
-		return null;
+    	 DatabaseAccessTask dbAccess = new DatabaseAccessTask();
+         dbAccess.execute(room_create_tag, name, propertyID, roomURL);
+         JSONObject json = null;
+ 		try {
+ 			json = dbAccess.get();
+ 		} catch (InterruptedException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		} catch (ExecutionException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+         return json;
+     	
      	
      }
      

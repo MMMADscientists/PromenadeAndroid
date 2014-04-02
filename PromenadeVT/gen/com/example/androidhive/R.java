@@ -44,7 +44,7 @@ public final class R {
         public static final int registerPassword=0x7f08000e;
         public static final int register_error=0x7f08000f;
         public static final int roomsLayout=0x7f080005;
-        public static final int textView1=0x7f080006;
+        public static final int username=0x7f080006;
     }
     public static final class layout {
         public static final int edit_room=0x7f030000;

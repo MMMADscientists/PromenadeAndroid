@@ -11,7 +11,7 @@
 
 	<!-- use username in database -->
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:gravity="center_horizontal"

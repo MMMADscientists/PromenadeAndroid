@@ -29,6 +29,8 @@ public class HomesActivity extends Activity
 	Button btnLogout;
 	private static String username;
 	
+	TextView title;// = (TextView) findViewById(R.id.username);
+	
 	UserFunctions userFunctions;
 	
 	// JSON Response node names
@@ -47,6 +49,8 @@ public class HomesActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.homes);
 		
+		
+		
 		properties = new ArrayList<Button>();
 		
 		userFunctions = new UserFunctions();
@@ -55,6 +59,10 @@ public class HomesActivity extends Activity
 		Intent intent = getIntent();
 		username = intent.getStringExtra("name");// pull from previous page
 		//dbID = intent.getStringExtra("id");
+		
+		title = (TextView) findViewById(R.id.username);
+		
+		title.setText(username);
 		
 		// make database call
 		UserFunctions userFunction = new UserFunctions();
