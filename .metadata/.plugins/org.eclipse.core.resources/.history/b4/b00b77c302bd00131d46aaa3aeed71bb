@@ -169,7 +169,7 @@ public class RoomsActivity extends Activity
 
 				String value = "";
 				try {
-					value = jsonID.getString(KEY_IDROOM);
+					value = (String) jsonID.getJSONObject(KEY_TUPLE).get(KEY_IDROOM);
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

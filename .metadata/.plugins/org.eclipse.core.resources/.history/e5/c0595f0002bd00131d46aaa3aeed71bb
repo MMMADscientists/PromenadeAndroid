@@ -14,17 +14,28 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dip"
-            android:text="LOGIN"
+            android:text="REGISTER"
             android:textSize="25dip"
             android:textStyle="bold" />
-        <!--  Username Label -->
+        <!--  Name Label -->
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Username" />
+        <!--  Name TextField -->
+        <EditText
+            android:id="@+id/registerName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+         
+        <!--  Email Label -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Email" />
         <!--  Email TextField -->
         <EditText
-            android:id="@+id/loginUser"
+            android:id="@+id/registerEmail"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
          
@@ -36,13 +47,13 @@
             android:text="Password" />
         <!--  Password TextField -->
         <EditText
-            android:id="@+id/loginPassword"
+            android:id="@+id/registerPassword"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:password="true" />
          
         <!--  Error message -->
-        <TextView android:id="@+id/login_error"
+        <TextView android:id="@+id/register_error"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#e30000"
@@ -51,20 +62,20 @@
  
         <!--  Login Button -->       
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegister"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
-            android:text="Login" />
+            android:text="Register" />
  
-        <!--  Link to Registration Screen -->
+        <!--  Link to Login Screen -->
         <Button
-            android:id="@+id/btnLinkToRegisterScreen"
+            android:id="@+id/btnLinkToLoginScreen"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dip"
             android:background="@null"
-            android:text="Register New Account"
+            android:text="Already registred. Login Me!"
             android:textColor="#21dbd4"
             android:textStyle="bold" />
     </LinearLayout>

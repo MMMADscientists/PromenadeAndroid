@@ -167,9 +167,9 @@ public class RoomsActivity extends Activity
 				// create new room and go to edit page
 				JSONObject jsonID = userFunctions.addRoom("New Room",dbID,null);
 
-				String value = "";
+				Integer value = 0;
 				try {
-					value = jsonID.getString(KEY_IDROOM);
+					value = jsonID.getJSONObject(KEY_TUPLE).getInt(KEY_IDROOM);
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
