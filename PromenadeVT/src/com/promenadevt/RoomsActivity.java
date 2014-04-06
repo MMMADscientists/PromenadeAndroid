@@ -29,11 +29,12 @@ public class RoomsActivity extends Activity
 	Button btnNewRoom;
 	Button btnChangeAddr;
 	Button btnLogout;
+	Button btnDelete;
     EditText inputAddr;
     
     UserFunctions userFunctions;
     
-	
+    private static String username;
 	private static String address;
 	private static String dbID;
 	
@@ -75,6 +76,7 @@ public class RoomsActivity extends Activity
 		// may need to account for newly registered user here
 		Intent intent = getIntent();
 		// pull info from previous page
+		username = intent.getStringExtra("user");
 		address = intent.getStringExtra("addr");
 		inputAddr = (EditText) findViewById(R.id.addr);
 		inputAddr.setText(address);
@@ -146,6 +148,12 @@ public class RoomsActivity extends Activity
         logout.setText("Logout");
         ll.addView(logout, params);
         btnLogout = (Button) findViewById(idRoom.size()+1);
+        
+        Button deleteRoom = new Button(this);
+        logout.setId(idRoom.size()+2);
+        logout.setText("Delete Property");
+        ll.addView(deleteRoom, params);
+        btnDelete = (Button) findViewById(idRoom.size()+2);
        
         btnChangeAddr.setOnClickListener(new View.OnClickListener() 
 		{
@@ -171,6 +179,7 @@ public class RoomsActivity extends Activity
 					//  go to next page with given room selected
 					Intent next = new Intent(getApplicationContext(),
 	                        EditActivity.class);
+					next.putExtra("user", username);
 					next.putExtra("name", name);
 					next.putExtra("id",id.toString());
 					next.putExtra("propID",dbID);
@@ -199,6 +208,7 @@ public class RoomsActivity extends Activity
 				}
 				Intent next = new Intent(getApplicationContext(),
                         EditActivity.class);
+				next.putExtra("user", username);
 				next.putExtra("name", "New Room");
 				next.putExtra("id",value.toString());
 				next.putExtra("propID",dbID);
@@ -221,6 +231,25 @@ public class RoomsActivity extends Activity
                 startActivity(login);
                 // Closing rooms screen
                 finish();
+				
+			}
+			 
+		 });
+		 
+		 btnDelete.setOnClickListener(new View.OnClickListener() 
+		 {
+
+			@Override
+			public void onClick(View arg0) {
+				//boolean cont = confirm();
+				if(true)//cont)
+				{
+					//userFunctions.deleteProperty(dbID);
+	                Intent homes = new Intent(getApplicationContext(), HomesActivity.class);
+	                homes.putExtra("name",username);
+	                startActivity(homes);
+				}
+				
 				
 			}
 			 

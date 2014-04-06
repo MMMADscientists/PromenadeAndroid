@@ -30,9 +30,11 @@ public class EditActivity extends Activity
 	Button btnTakePhoto;
 	Button btnAddConnection;
 	Button btnViewRoom;
+	Button btnDelete;
 	
 	 private static String KEY_IDPROPERTY = "idProperty";
-	 
+
+	private static String username;
 	private static String roomName;
 	private static String dbID;
 	private static String propID;
@@ -65,6 +67,7 @@ public class EditActivity extends Activity
 		// may need to account for newly registered user here
 		Intent intent = getIntent();
 		// pull info from previous page
+		username = intent.getStringExtra("user");
 		roomName = intent.getStringExtra("name");
 		propID = intent.getStringExtra("propID");
 		addr = intent.getStringExtra("addr");
@@ -76,6 +79,7 @@ public class EditActivity extends Activity
 		btnTakePhoto = (Button) findViewById(R.id.btnPhoto);
 		btnAddConnection = (Button) findViewById(R.id.btnConnection);
 		btnViewRoom = (Button) findViewById(R.id.btnView);
+		btnDelete = (Button) findViewById(R.id.btnDelete);
     	
         btnChangeName.setOnClickListener(new View.OnClickListener() 
 		{
@@ -119,6 +123,28 @@ public class EditActivity extends Activity
 			@Override
 			public void onClick(View arg0) {
 				// view room as it is now
+				
+			}
+			 
+		 });
+        
+        btnDelete.setOnClickListener(new View.OnClickListener() 
+		{
+
+			@Override
+			public void onClick(View arg0) {
+				// view room as it is now
+				//boolean cont = confirm();
+				if(true)//cont)
+				{
+					//userFunctions.deleteProperty(dbID);
+	                Intent rooms = new Intent(getApplicationContext(), RoomsActivity.class);
+	                rooms.putExtra("name",username);
+	                rooms.putExtra("id",propID);
+		        	rooms.putExtra("addr", addr);
+	                
+	                startActivity(rooms);
+				}
 				
 			}
 			 

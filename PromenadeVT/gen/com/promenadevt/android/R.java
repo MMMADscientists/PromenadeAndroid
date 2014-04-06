@@ -24,27 +24,28 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080014;
-        public static final int addr=0x7f080012;
+        public static final int action_settings=0x7f080015;
+        public static final int addr=0x7f080013;
         public static final int btnConnection=0x7f080003;
-        public static final int btnLinkToLoginScreen=0x7f080011;
-        public static final int btnLinkToRegisterScreen=0x7f08000b;
-        public static final int btnLogin=0x7f08000a;
+        public static final int btnDelete=0x7f080005;
+        public static final int btnLinkToLoginScreen=0x7f080012;
+        public static final int btnLinkToRegisterScreen=0x7f08000c;
+        public static final int btnLogin=0x7f08000b;
         public static final int btnPhoto=0x7f080002;
-        public static final int btnRegister=0x7f080010;
-        public static final int btnUpdateP=0x7f080013;
+        public static final int btnRegister=0x7f080011;
+        public static final int btnUpdateP=0x7f080014;
         public static final int btnUpdateR=0x7f080001;
         public static final int btnView=0x7f080004;
-        public static final int loginPassword=0x7f080008;
-        public static final int loginUser=0x7f080007;
-        public static final int login_error=0x7f080009;
+        public static final int loginPassword=0x7f080009;
+        public static final int loginUser=0x7f080008;
+        public static final int login_error=0x7f08000a;
         public static final int nameRoom=0x7f080000;
-        public static final int registerEmail=0x7f08000d;
-        public static final int registerName=0x7f08000c;
-        public static final int registerPassword=0x7f08000e;
-        public static final int register_error=0x7f08000f;
-        public static final int roomsLayout=0x7f080005;
-        public static final int username=0x7f080006;
+        public static final int registerEmail=0x7f08000e;
+        public static final int registerName=0x7f08000d;
+        public static final int registerPassword=0x7f08000f;
+        public static final int register_error=0x7f080010;
+        public static final int roomsLayout=0x7f080006;
+        public static final int username=0x7f080007;
     }
     public static final class layout {
         public static final int edit_room=0x7f030000;
