@@ -47,15 +47,15 @@ public class EditActivity extends Activity
 	int CAMERA_PIC_REQUEST = 1337; 
 	
 	private void getPano(){
-		//Intent takePanoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		//startActivityForResult(takePanoIntent,CAMERA_PIC_REQUEST);
+		Intent takePanoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		startActivityForResult(takePanoIntent,CAMERA_PIC_REQUEST);
 		
-		Intent res = new Intent();
+		/*Intent res = new Intent();
 	    String mPackage = "com.google.android.gallery3d";
 	    String mClass = "com.google.android.apps.lightcycle.ProtectedPanoramaCaptureActivity";
 
 	    res.setComponent(new ComponentName(mPackage,mClass));
-	    startActivityForResult(res,CAMERA_PIC_REQUEST);
+	    startActivityForResult(res,CAMERA_PIC_REQUEST);*/
 		
 	}
 	
