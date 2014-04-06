@@ -7,4 +7,8 @@
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item value="false" key="deleteSubPackages"/>
 	</section>
+	<section name="RefactoringWizard.AndroidPackageNameRefactoring">
+		<item value="470" key="height"/>
+		<item value="600" key="width"/>
+	</section>
 </section>
