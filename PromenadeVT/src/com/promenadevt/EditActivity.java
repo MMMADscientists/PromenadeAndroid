@@ -9,11 +9,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
  
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,6 +47,31 @@ public class EditActivity extends Activity
 	private static String dbID;
 	private static String propID;
 	private static String addr;
+	
+	int CAMERA_PIC_REQUEST = 1337; 
+	
+	private void getPano(){
+		//Intent takePanoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		//startActivityForResult(takePanoIntent,CAMERA_PIC_REQUEST);
+		
+		Intent res = new Intent();
+	    String mPackage = "com.google.android.gallery3d";
+	    String mClass = "com.google.android.apps.lightcycle.ProtectedPanoramaCaptureActivity";
+
+	    res.setComponent(new ComponentName(mPackage,mClass));
+	    startActivityForResult(res,CAMERA_PIC_REQUEST);
+		
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data){
+		if( requestCode == CAMERA_PIC_REQUEST){
+			Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+			ImageView image =(ImageView) findViewById(R.id.PhotoCaptured);
+			image.setImageBitmap(thumbnail);
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
 	
 	 @Override
 	    public boolean onKeyDown(int keyCode, KeyEvent event)  {
@@ -108,7 +137,7 @@ public class EditActivity extends Activity
 
 			@Override
 			public void onClick(View arg0) {
-				// use photosphere API
+				getPano();
 				
 			}
 			 
