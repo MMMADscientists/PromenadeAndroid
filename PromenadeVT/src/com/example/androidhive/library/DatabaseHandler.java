@@ -85,7 +85,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if(cursor.getCount() > 0){
             user.put("username", cursor.getString(1));
             user.put("password", cursor.getString(2));
-            user.put("email", cursor.getString(3));
+            //user.put("email", cursor.getString(3));
             //user.put("uid", cursor.getString(3));
             //user.put("created_at", cursor.getString(4));
         }
@@ -112,7 +112,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
      
     /**
-     * Re crate database
+     * Re create database
      * Delete all tables and create them again
      * */
     public void resetTables(){

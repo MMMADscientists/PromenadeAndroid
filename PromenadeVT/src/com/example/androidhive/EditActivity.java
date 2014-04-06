@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Button;
@@ -33,7 +34,25 @@ public class EditActivity extends Activity
 	 
 	private static String roomName;
 	private static String dbID;
+	private static String propID;
+	private static String addr;
 	
+	 @Override
+	    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+	        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+	            // do something on back.
+	        	//DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+	        	Intent rooms = new Intent(getApplicationContext(), RoomsActivity.class);
+	        	//HashMap<String, String> loginInfo = db.getUserDetails();
+	        	rooms.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	        	rooms.putExtra("id",propID);
+	        	rooms.putExtra("addr", addr);
+	            startActivity(rooms);
+	            return true;
+	        }
+
+	        return super.onKeyDown(keyCode, event);
+	    }
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) 
@@ -46,6 +65,8 @@ public class EditActivity extends Activity
 		Intent intent = getIntent();
 		// pull info from previous page
 		roomName = intent.getStringExtra("name");
+		propID = intent.getStringExtra("propID");
+		addr = intent.getStringExtra("addr");
 		inputName = (EditText) findViewById(R.id.nameRoom);
 		inputName.setText(roomName);
 		dbID = intent.getStringExtra("id");

@@ -10,18 +10,24 @@
         android:orientation="vertical"
         android:padding="10dip" >
         <!--  View Title Label -->
+
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dip"
             android:text="LOGIN"
+            android:textColor="#FFFFFF"
             android:textSize="25dip"
             android:textStyle="bold" />
+
         <!--  Username Label -->
+
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Username" />
+            android:text="Username"
+            android:textColor="#FFFFFF" />
+
         <!--  Email TextField -->
         <EditText
             android:id="@+id/loginUser"
@@ -29,11 +35,14 @@
             android:layout_height="wrap_content" />
          
         <!--  Password Label -->
+
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dip"
-            android:text="Password" />
+            android:text="Password"
+            android:textColor="#FFFFFF" />
+
         <!--  Password TextField -->
         <EditText
             android:id="@+id/loginPassword"

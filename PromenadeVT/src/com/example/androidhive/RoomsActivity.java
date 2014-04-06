@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Button;
@@ -30,6 +31,7 @@ public class RoomsActivity extends Activity
     EditText inputAddr;
     
     UserFunctions userFunctions;
+    
 	
 	private static String address;
 	private static String dbID;
@@ -43,6 +45,23 @@ public class RoomsActivity extends Activity
     private static String KEY_ROOMURL = "roomURL";
     private static String KEY_IDPROPERTY = "idProperty";
 	
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            // do something on back.
+        	DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+        	Intent homes = new Intent(getApplicationContext(), HomesActivity.class);
+        	HashMap<String, String> loginInfo = db.getUserDetails();
+        	homes.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            homes.putExtra("name",loginInfo.get("username"));
+            startActivity(homes);
+            finish();
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+    
 	@Override
     public void onCreate(Bundle savedInstanceState) 
 	{
@@ -153,7 +172,10 @@ public class RoomsActivity extends Activity
 	                        EditActivity.class);
 					next.putExtra("name", name);
 					next.putExtra("id",id.toString());
+					next.putExtra("propID",dbID);
+					next.putExtra("addr",address);
 	                startActivity(next);
+	                finish();
 				}
 				 
 			 });
@@ -178,7 +200,10 @@ public class RoomsActivity extends Activity
                         EditActivity.class);
 				next.putExtra("name", "New Room");
 				next.putExtra("id",value.toString());
+				next.putExtra("propID",dbID);
+				next.putExtra("addr",address);
                 startActivity(next);
+                finish();
 				
 			}
 			 
