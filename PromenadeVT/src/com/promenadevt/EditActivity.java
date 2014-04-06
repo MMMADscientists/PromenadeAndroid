@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 import com.promenadevt.android.R;
 import com.promenadevt.library.DatabaseHandler;
@@ -31,6 +32,9 @@ public class EditActivity extends Activity
 	Button btnAddConnection;
 	Button btnViewRoom;
 	Button btnDelete;
+	Button btnDeleteYes;
+	Button btnDeleteNo;
+    ViewSwitcher switcher;
 	
 	 private static String KEY_IDPROPERTY = "idProperty";
 
@@ -48,6 +52,7 @@ public class EditActivity extends Activity
 	        	Intent rooms = new Intent(getApplicationContext(), RoomsActivity.class);
 	        	//HashMap<String, String> loginInfo = db.getUserDetails();
 	        	rooms.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	        	rooms.putExtra("user",username);
 	        	rooms.putExtra("id",propID);
 	        	rooms.putExtra("addr", addr);
 	            startActivity(rooms);
@@ -79,7 +84,10 @@ public class EditActivity extends Activity
 		btnTakePhoto = (Button) findViewById(R.id.btnPhoto);
 		btnAddConnection = (Button) findViewById(R.id.btnConnection);
 		btnViewRoom = (Button) findViewById(R.id.btnView);
-		btnDelete = (Button) findViewById(R.id.btnDelete);
+		btnDelete = (Button) findViewById(R.id.btnDeleteRoom);
+		btnDeleteYes = (Button) findViewById(R.id.btnDeleteRoomYes);
+		btnDeleteNo = (Button) findViewById(R.id.btnDeleteRoomNo);
+		switcher = (ViewSwitcher) findViewById(R.id.editRoomsSwitch);
     	
         btnChangeName.setOnClickListener(new View.OnClickListener() 
 		{
@@ -133,19 +141,33 @@ public class EditActivity extends Activity
 
 			@Override
 			public void onClick(View arg0) {
-				// view room as it is now
-				//boolean cont = confirm();
-				if(true)//cont)
-				{
-					//userFunctions.deleteProperty(dbID);
-	                Intent rooms = new Intent(getApplicationContext(), RoomsActivity.class);
-	                rooms.putExtra("name",username);
-	                rooms.putExtra("id",propID);
-		        	rooms.putExtra("addr", addr);
-	                
-	                startActivity(rooms);
-				}
-				
+				switcher.showNext();
+			}
+			 
+		 });
+        
+        btnDeleteYes.setOnClickListener(new View.OnClickListener() 
+		 {
+
+			@Override
+			public void onClick(View arg0) {
+				userFunctions.deleteRoom(dbID);
+				Intent rooms = new Intent(getApplicationContext(), RoomsActivity.class);
+				rooms.putExtra("user", username);
+				rooms.putExtra("addr", addr);
+				rooms.putExtra("id",propID);
+				switcher.showPrevious();
+				startActivity(rooms);
+			}
+			 
+		 });
+		 
+		 btnDeleteNo.setOnClickListener(new View.OnClickListener() 
+		 {
+
+			@Override
+			public void onClick(View arg0) {
+               switcher.showPrevious();
 			}
 			 
 		 });

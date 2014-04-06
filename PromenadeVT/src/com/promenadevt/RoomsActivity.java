@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 import com.promenadevt.android.R;
 import com.promenadevt.library.DatabaseHandler;
@@ -30,7 +31,10 @@ public class RoomsActivity extends Activity
 	Button btnChangeAddr;
 	Button btnLogout;
 	Button btnDelete;
+	Button btnDeleteYes;
+	Button btnDeleteNo;
     EditText inputAddr;
+    ViewSwitcher switcher;
     
     UserFunctions userFunctions;
     
@@ -86,6 +90,9 @@ public class RoomsActivity extends Activity
 		dbID = intent.getStringExtra("id");
 		
 		btnChangeAddr = (Button) findViewById(R.id.btnUpdateP);
+		btnDeleteYes = (Button) findViewById(R.id.btnDeleteHomeYes);
+		btnDeleteNo = (Button) findViewById(R.id.btnDeleteHomeNo);
+		switcher = (ViewSwitcher) findViewById(R.id.roomsSwitch);
 		
 		// make database call
 		final UserFunctions userFunction = new UserFunctions();
@@ -241,16 +248,31 @@ public class RoomsActivity extends Activity
 
 			@Override
 			public void onClick(View arg0) {
-				//boolean cont = confirm();
-				if(true)//cont)
-				{
-					//userFunctions.deleteProperty(dbID);
-	                Intent homes = new Intent(getApplicationContext(), HomesActivity.class);
-	                homes.putExtra("name",username);
-	                startActivity(homes);
-				}
-				
-				
+				switcher.showNext();
+			}
+			 
+		 });
+		 
+		 btnDeleteYes.setOnClickListener(new View.OnClickListener() 
+		 {
+
+			@Override
+			public void onClick(View arg0) {
+				userFunctions.deleteProperty(dbID);
+                Intent homes = new Intent(getApplicationContext(), HomesActivity.class);
+                homes.putExtra("name",username);
+                switcher.showPrevious();
+                startActivity(homes);
+			}
+			 
+		 });
+		 
+		 btnDeleteNo.setOnClickListener(new View.OnClickListener() 
+		 {
+
+			@Override
+			public void onClick(View arg0) {
+                switcher.showPrevious();
 			}
 			 
 		 });
