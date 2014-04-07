@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#3b3b3b" >
+    
+	<ViewSwitcher
+    android:id="@+id/profileSwitcher"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	    
+	
+    <LinearLayout
+        android:id="@+id/roomsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+	<!-- use address in database -->
+
+        <EditText
+            android:id="@+id/addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="true"
+            android:ems="10"
+            android:inputType="text"
+            android:text="address"
+            android:textColor="#FFFFFF" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/btnUpdateP"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Address" />
+
+    </LinearLayout>
+
+   	<LinearLayout
+   	    android:id="@+id/confirmLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        
+   	    <TextView
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:text="Are you sure?"
+           android:gravity="center_horizontal"
+           android:textColor="#FFFFFF" />
+   	    
+   	    <Button
+            android:id="@+id/btnYes"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes" />
+   	    
+   	    <Button
+            android:id="@+id/btnNo"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No" />
+    </LinearLayout>
+    
+    </ViewSwitcher>
+
+</ScrollView>
