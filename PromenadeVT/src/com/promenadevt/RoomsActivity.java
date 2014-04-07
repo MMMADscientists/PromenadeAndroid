@@ -94,7 +94,7 @@ public class RoomsActivity extends Activity
     	//lists of recieved data
     	List<Integer> idRoom = new ArrayList<Integer>();
     	List<String> roomName = new ArrayList<String>();
-    	List<String> roomURL = new ArrayList<String>();
+    	final List<String> roomURL = new ArrayList<String>();
     	
     	try {
                 if (json.getString(KEY_SUCCESS) != null) {
@@ -171,6 +171,7 @@ public class RoomsActivity extends Activity
 		{
 			final String name = roomName.get(i);
 			final Integer id = idRoom.get(i);
+			final String url = roomURL.get(i);
 			 rooms.get(i).setOnClickListener(new View.OnClickListener() 
 			 {
 
@@ -184,6 +185,7 @@ public class RoomsActivity extends Activity
 					next.putExtra("id",id.toString());
 					next.putExtra("propID",dbID);
 					next.putExtra("addr",address);
+					next.putExtra("url",url);
 	                startActivity(next);
 	                finish();
 				}
