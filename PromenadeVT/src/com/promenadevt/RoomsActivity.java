@@ -199,14 +199,15 @@ public class RoomsActivity extends Activity
 			@Override
 			public void onClick(View arg0) {
 				// create new room and go to edit page
-				JSONObject jsonID = userFunctions.addRoom("New Room",dbID,null);
+				JSONObject jsonID = userFunctions.addRoom("New Room",dbID,"");
 
 				String value = "";
 				try {
-					value = jsonID.getString(KEY_IDROOM);
+					value = jsonID.getJSONObject(KEY_TUPLE).getString(KEY_IDROOM);
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					
 				}
 				Intent next = new Intent(getApplicationContext(),
                         EditActivity.class);
@@ -246,10 +247,14 @@ public class RoomsActivity extends Activity
 				//boolean cont = confirm();
 				if(true)//cont)
 				{
-					//userFunctions.deleteProperty(dbID);
-	                Intent homes = new Intent(getApplicationContext(), HomesActivity.class);
-	                homes.putExtra("name",username);
+					userFunctions.deleteProperty(dbID);
+	                DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+	            	Intent homes = new Intent(getApplicationContext(), HomesActivity.class);
+	            	HashMap<String, String> loginInfo = db.getUserDetails();
+	            	homes.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	                homes.putExtra("name",loginInfo.get("username"));
 	                startActivity(homes);
+	                finish();
 				}
 				
 				

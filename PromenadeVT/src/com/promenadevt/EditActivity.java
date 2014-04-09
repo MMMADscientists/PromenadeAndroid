@@ -1,5 +1,6 @@
 package com.promenadevt;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.Date;
 
@@ -25,6 +26,7 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
@@ -43,10 +45,6 @@ public class EditActivity extends Activity
 	Button btnDelete;
 	ImageView roomImage;
 	
-	 
-	 
-	 //private final String MY_ACCESS_KEY_ID = "AKIAI77Q7DPQCAT7OPJA";
-	 //private final String MY_SECRET_KEY = "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";
 
 	private static String username;
 	private static String roomName;
@@ -87,24 +85,12 @@ public class EditActivity extends Activity
 			if (resultCode == RESULT_OK) {
 
 				Uri selectedImage = data.getData();
+				//Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+				roomImage.setImageURI(selectedImage);
 				new S3PutObjectTask().execute(selectedImage);
 			}
 		}
 		super.onActivityResult(requestCode, resultCode, data);
-		
-		//AmazonS3Client s3Client = new AmazonS3Client( new BasicAWSCredentials( MY_ACCESS_KEY_ID, MY_SECRET_KEY ) );
-		/*s3Client.createBucket( MY_PICTURE_BUCKET );
-		PutObjectRequest por = new PutObjectRequest( Constants.getPictureBucket(), Constants.PICTURE_NAME, new java.io.File( filePath) );  
-		s3Client.putObject( por );
-		
-		ResponseHeaderOverrides override = new ResponseHeaderOverrides();
-		override.setContentType( "image/jpeg" );
-		
-		GeneratePresignedUrlRequest urlRequest = new GeneratePresignedUrlRequest( Constants.getPictureBucket(), Constants.PICTURE_NAME );
-		urlRequest.setExpiration( new Date( System.currentTimeMillis() + 3600000 ) );  // Added an hour's worth of milliseconds to the current time.
-		urlRequest.setResponseHeaders( override );
-		
-		URL url = s3Client.generatePresignedUrl( urlRequest );*/
 	}
 	
 	 @Override
@@ -217,7 +203,7 @@ public class EditActivity extends Activity
 				//boolean cont = confirm();
 				if(true)//cont)
 				{
-					//userFunctions.deleteProperty(dbID);
+					new UserFunctions().deleteRoom(dbID);
 	                Intent rooms = new Intent(getApplicationContext(), RoomsActivity.class);
 	                rooms.putExtra("name",username);
 	                rooms.putExtra("id",propID);
@@ -286,17 +272,17 @@ public class EditActivity extends Activity
 			S3TaskResult result = new S3TaskResult();
 
 			// Put the image data into S3.
+			PutObjectRequest por;
 			try {
-				s3Client.createBucket(Constants.getPictureBucket());
-
-				PutObjectRequest por = new PutObjectRequest(
-						Constants.getPictureBucket(), Constants.PICTURE_NAME,
+				por = new PutObjectRequest(
+						Constants.getPictureBucket(), Constants.ROOM_ID,
 						resolver.openInputStream(selectedImage),metadata);
-				s3Client.putObject(por);
-			} catch (Exception exception) {
-
-				result.setErrorMessage(exception.getMessage());
+						s3Client.putObject(por);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+			
 
 			return result;
 		}
@@ -332,7 +318,7 @@ public class EditActivity extends Activity
 				Date expirationDate = new Date(
 						System.currentTimeMillis() + 3600000);
 				GeneratePresignedUrlRequest urlRequest = new GeneratePresignedUrlRequest(
-						Constants.getPictureBucket(), Constants.PICTURE_NAME);
+						Constants.getPictureBucket(), Constants.ROOM_ID);
 				urlRequest.setExpiration(expirationDate);
 				urlRequest.setResponseHeaders(override);
 
@@ -359,7 +345,6 @@ public class EditActivity extends Activity
 
 				// Display in Browser.
 				startActivity(new Intent(Intent.ACTION_VIEW, result.getUri()));
-				//roomImage.setImageDrawable(null);
 				
 			}
 		}

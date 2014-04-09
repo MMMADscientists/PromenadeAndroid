@@ -9,6 +9,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
  
 import android.content.Context;
+import android.util.Log;
  
 public class UserFunctions {
      
@@ -28,6 +29,9 @@ public class UserFunctions {
     private static String room_rename_tag = "renameRoom";
     private static String house_create_tag = "createHouse";
     private static String room_create_tag = "createRoom";
+    private static String room_delete_tag = "deleteRoom";
+    private static String house_delete_tag = "deleteProperty";
+    
     
     // constructor
     public UserFunctions(){
@@ -206,9 +210,46 @@ public class UserFunctions {
  			// TODO Auto-generated catch block
  			e.printStackTrace();
  		}
+ 		Log.e("JSON Error","RETURNED NULL JSON");
          return json;
      	
      	
+     }
+     
+     public JSONObject deleteRoom(String roomID){
+    	 DatabaseAccessTask dbAccess = new DatabaseAccessTask();
+         dbAccess.execute(room_delete_tag, roomID);
+         JSONObject json = null;
+ 		try {
+ 			json = dbAccess.get();
+ 		} catch (InterruptedException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		} catch (ExecutionException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+ 		Log.e("JSON Error","RETURNED NULL JSON");
+         return json;
+    	 
+     }
+     
+     public JSONObject deleteProperty(String propertyID){
+    	 DatabaseAccessTask dbAccess = new DatabaseAccessTask();
+         dbAccess.execute(house_delete_tag, propertyID);
+         JSONObject json = null;
+ 		try {
+ 			json = dbAccess.get();
+ 		} catch (InterruptedException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		} catch (ExecutionException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+ 		Log.e("JSON Error","RETURNED NULL JSON");
+         return json;
+    	 
      }
      
 }

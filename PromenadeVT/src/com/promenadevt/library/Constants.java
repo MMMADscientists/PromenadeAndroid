@@ -18,20 +18,20 @@ public class Constants {
 	// * http://aws.amazon.com/articles/Mobile/4617974389850313
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-	public static final String ACCESS_KEY_ID = "AKIAI77Q7DPQCAT7OPJA";
-	public static final String SECRET_KEY = "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";
+	public static final String ACCESS_KEY_ID = "AKIAJ4VTSI56VBVZK6EQ";
+	public static final String SECRET_KEY = "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";
 
-	public static String PICTURE_BUCKET;// = "picture-bucket";
-	public static String PICTURE_NAME;// = "NameOfThePicture";
+	public String PROP_ID;// = "picture-bucket";
+	public String ROOM_ID;// = "NameOfThePicture";
 	
 	public Constants(String bucket, String name){
-		PICTURE_BUCKET = bucket;
-		PICTURE_NAME = name;
+		PROP_ID = bucket;
+		ROOM_ID = "room"+name;
 	}
 
 
 	public String getPictureBucket() {
-		return ("mstombaugh" + ACCESS_KEY_ID + PICTURE_BUCKET).toLowerCase(Locale.US);
+		return ("promenadeVTPics").toLowerCase(Locale.US);
 	}
 
 }

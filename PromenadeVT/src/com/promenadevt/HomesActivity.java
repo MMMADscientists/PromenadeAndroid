@@ -181,7 +181,7 @@ public class HomesActivity extends Activity
 
 				String value = "";
 				try {
-					value = jsonID.getString(KEY_IDPROPERTY);
+					value = jsonID.getJSONObject(KEY_TUPLE).getString(KEY_IDPROPERTY);
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
