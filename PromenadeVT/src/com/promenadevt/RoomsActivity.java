@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ViewSwitcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -30,6 +31,9 @@ public class RoomsActivity extends Activity
 	Button btnChangeAddr;
 	Button btnLogout;
 	Button btnDelete;
+	Button btnDeleteYes;
+	Button btnDeleteNo;
+    ViewSwitcher switcher;
     EditText inputAddr;
     
     UserFunctions userFunctions;
@@ -86,7 +90,9 @@ public class RoomsActivity extends Activity
 		dbID = intent.getStringExtra("id");
 		
 		btnChangeAddr = (Button) findViewById(R.id.btnUpdateP);
-		
+		btnDeleteYes = (Button) findViewById(R.id.btnDeleteHomeYes);
+		btnDeleteNo = (Button) findViewById(R.id.btnDeleteHomeNo);
+		switcher = (ViewSwitcher) findViewById(R.id.roomsSwitch);
 		// make database call
 		final UserFunctions userFunction = new UserFunctions();
 		JSONObject json = userFunction.getRooms(dbID);
@@ -239,14 +245,22 @@ public class RoomsActivity extends Activity
 			 
 		 });
 		 
+		 
 		 btnDelete.setOnClickListener(new View.OnClickListener() 
-		 {
+			{
 
-			@Override
-			public void onClick(View arg0) {
-				//boolean cont = confirm();
-				if(true)//cont)
-				{
+				@Override
+				public void onClick(View arg0) {
+					switcher.showNext();
+				}
+				 
+			 });
+	        
+	        btnDeleteYes.setOnClickListener(new View.OnClickListener() 
+			 {
+
+				@Override
+				public void onClick(View arg0) {
 					userFunctions.deleteProperty(dbID);
 	                DatabaseHandler db = new DatabaseHandler(getApplicationContext());
 	            	Intent homes = new Intent(getApplicationContext(), HomesActivity.class);
@@ -256,10 +270,17 @@ public class RoomsActivity extends Activity
 	                startActivity(homes);
 	                finish();
 				}
-				
-				
-			}
+				 
+			 });
 			 
-		 });
+			 btnDeleteNo.setOnClickListener(new View.OnClickListener() 
+			 {
+
+				@Override
+				public void onClick(View arg0) {
+	               switcher.showPrevious();
+				}
+				 
+			 });
 	}
 }
