@@ -1,8 +1,12 @@
 package com.promenadevt;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.util.concurrent.ExecutionException;
+
+import org.apache.commons.io.IOUtils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -12,6 +16,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -29,9 +34,12 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.promenadevt.android.R;
 import com.promenadevt.library.Constants;
 import com.promenadevt.library.UserFunctions;
@@ -48,6 +56,8 @@ public class EditActivity extends Activity
 	Button btnDeleteNo;
     ViewSwitcher switcher;
 	ImageView roomImage;
+	
+	UserFunctions userFunctions;
 	
 
 	private static String username;
@@ -92,6 +102,7 @@ public class EditActivity extends Activity
 				//Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
 				roomImage.setImageURI(selectedImage);
 				new S3PutObjectTask().execute(selectedImage);
+				userFunctions.changeURL(dbID, "https://s3-us-west-2.amazonaws.com/promenadevt-1/room"+dbID);
 			}
 		}
 		super.onActivityResult(requestCode, resultCode, data);
@@ -136,23 +147,34 @@ public class EditActivity extends Activity
 		inputName = (EditText) findViewById(R.id.nameRoom);
 		inputName.setText(roomName);
 		dbID = intent.getStringExtra("id");
-		roomURL = intent.getStringExtra("url");
+		roomURL = "https://s3-us-west-2.amazonaws.com/promenadevt-1/room"+dbID;
 		Constants = new Constants(propID,dbID);
 		
 		btnChangeName = (Button) findViewById(R.id.btnUpdateR);
 		btnTakePhoto = (Button) findViewById(R.id.btnPhoto);
 		btnAddConnection = (Button) findViewById(R.id.btnConnection);
 		btnViewRoom = (Button) findViewById(R.id.btnView);
-		btnDelete = (Button) findViewById(R.id.btnDeleteRoom);
+		btnDelete = (Button) findViewById(R.id.btnDelete);
 		btnDeleteYes = (Button) findViewById(R.id.btnDeleteRoomYes);
 		btnDeleteNo = (Button) findViewById(R.id.btnDeleteRoomNo);
 		switcher = (ViewSwitcher) findViewById(R.id.editRoomsSwitch);
 		roomImage =(ImageView) findViewById(R.id.PhotoCaptured);
 		
+		userFunctions = new UserFunctions();
+		
 		if(roomURL != null){
-			
+			try {
+				Bitmap bitmap = new S3GetObjectTask().execute().get();
+				roomImage.setImageBitmap(bitmap);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-    	
+		
         btnChangeName.setOnClickListener(new View.OnClickListener() 
 		{
 
@@ -186,7 +208,7 @@ public class EditActivity extends Activity
 			@Override
 			public void onClick(View arg0) {
 				// go to screen to add connections to room
-				String url = "http://54.186.153.0/API/embeds.php?i="+propID;
+				String url = "http://54.186.153.0/API/embed_js.php?i="+dbID;
 				Intent browser = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
 				startActivity(browser);
 			}
@@ -199,7 +221,7 @@ public class EditActivity extends Activity
 			@Override
 			public void onClick(View arg0) {
 				// view room as it is now
-				new S3GeneratePresignedUrlTask().execute();
+				//new S3GeneratePresignedUrlTask().execute();
 			}
 			 
 		 });
@@ -324,12 +346,12 @@ public class EditActivity extends Activity
 		}
 	}
 
-	private class S3GeneratePresignedUrlTask extends
-			AsyncTask<Void, Void, S3TaskResult> {
+	private class S3GetObjectTask extends
+			AsyncTask<Void, Void, Bitmap> {
 
-		protected S3TaskResult doInBackground(Void... voids) {
+		protected Bitmap doInBackground(Void... voids) {
 
-			S3TaskResult result = new S3TaskResult();
+			//S3TaskResult result = new S3TaskResult();
 
 			try {
 				// Ensure that the image will be treated as such.
@@ -339,38 +361,34 @@ public class EditActivity extends Activity
 				// Generate the presigned URL.
 
 				// Added an hour's worth of milliseconds to the current time.
-				Date expirationDate = new Date(
-						System.currentTimeMillis() + 3600000);
-				GeneratePresignedUrlRequest urlRequest = new GeneratePresignedUrlRequest(
-						Constants.getPictureBucket(), Constants.ROOM_ID);
-				urlRequest.setExpiration(expirationDate);
+				
+				GetObjectRequest urlRequest = new GetObjectRequest(
+						Constants.getPictureBucket(), "room" + dbID);
+				//urlRequest.setExpiration(expirationDate);
 				urlRequest.setResponseHeaders(override);
 
-				URL url = s3Client.generatePresignedUrl(urlRequest);
-
-				result.setUri(Uri.parse(url.toURI().toString()));
+				S3Object url = s3Client.getObject(urlRequest);
+					
+				byte[] bytes = null;
+				try {
+					bytes = IOUtils.toByteArray(url.getObjectContent());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+				return bitmap;
+				//roomImage.setImageBitmap(bitmap);
+				
+				//result.setUri(Uri.parse(url.toURI().toString()));
 
 			} catch (Exception exception) {
 
-				result.setErrorMessage(exception.getMessage());
+				//result.setErrorMessage(exception.getMessage());
 			}
+			return null;
 
-			return result;
-		}
-
-		protected void onPostExecute(S3TaskResult result) {
-
-			if (result.getErrorMessage() != null) {
-
-				displayErrorAlert(
-						"failure",
-						result.getErrorMessage());
-			} else if (result.getUri() != null) {
-
-				// Display in Browser.
-				startActivity(new Intent(Intent.ACTION_VIEW, result.getUri()));
-				
-			}
+			//return result;
 		}
 	}
 

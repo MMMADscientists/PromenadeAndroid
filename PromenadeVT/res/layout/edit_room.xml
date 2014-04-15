@@ -36,7 +36,7 @@
             android:id="@+id/btnPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Take New Picture" />
+            android:text="Upload New Picture" />
 
         <Button
             android:id="@+id/btnConnection"

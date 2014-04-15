@@ -148,19 +148,20 @@ public class RoomsActivity extends Activity
         ll.addView(newRoom, params);
         btnNewRoom = (Button) findViewById(idRoom.size());
         
+        //delete room
+        Button deleteRoom = new Button(this);
+        deleteRoom.setId(idRoom.size()+2);
+        deleteRoom.setText("Delete Property");
+        ll.addView(deleteRoom, params);
+        btnDelete = (Button) findViewById(idRoom.size()+2);
+        
         //logout button
         Button logout = new Button(this);
         logout.setId(idRoom.size()+1);
         logout.setText("Logout");
         ll.addView(logout, params);
         btnLogout = (Button) findViewById(idRoom.size()+1);
-        
-        Button deleteRoom = new Button(this);
-        logout.setId(idRoom.size()+2);
-        logout.setText("Delete Property");
-        ll.addView(deleteRoom, params);
-        btnDelete = (Button) findViewById(idRoom.size()+2);
-       
+
         btnChangeAddr.setOnClickListener(new View.OnClickListener() 
 		{
 
