@@ -208,7 +208,7 @@ public class EditActivity extends Activity
 			@Override
 			public void onClick(View arg0) {
 				// go to screen to add connections to room
-				String url = "http://54.186.153.0/API/embed_js.php?i="+dbID;
+				String url = "http://54.186.153.0/API/embed_js.php?i="+propID;
 				Intent browser = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
 				startActivity(browser);
 			}
