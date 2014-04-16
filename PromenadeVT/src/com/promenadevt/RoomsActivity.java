@@ -216,6 +216,7 @@ public class RoomsActivity extends Activity
 					e.printStackTrace();
 					
 				}
+				// may need to update webgl here
 				Intent next = new Intent(getApplicationContext(),
                         EditActivity.class);
 				next.putExtra("user", username);
