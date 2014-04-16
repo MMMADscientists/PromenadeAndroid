@@ -186,6 +186,7 @@ public class HomesActivity extends Activity
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				// may need to update webgl here
 				Intent next = new Intent(getApplicationContext(),
                         RoomsActivity.class);
 				next.putExtra("user", username);
