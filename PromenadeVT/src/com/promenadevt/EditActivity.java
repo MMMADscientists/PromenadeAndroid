@@ -2,7 +2,6 @@ package com.promenadevt;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.sql.Date;
 import java.util.concurrent.ExecutionException;
@@ -18,7 +17,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -101,13 +99,8 @@ public class EditActivity extends Activity
 			if (resultCode == RESULT_OK) {
 
 				Uri selectedImage = data.getData();
-				Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
-				
-				int height = Math.min(4096, thumbnail.getHeight());
-				int width = Math.min(4096, thumbnail.getWidth());;
-				
-				
-				roomImage.setImageBitmap(getResizedBitmap(thumbnail,height,width));
+				//Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+				roomImage.setImageURI(selectedImage);
 				new S3PutObjectTask().execute(selectedImage);
 				userFunctions.changeURL(dbID, "https://s3-us-west-2.amazonaws.com/promenadevt-1/room"+dbID);
 			}
@@ -154,7 +147,7 @@ public class EditActivity extends Activity
 		inputName = (EditText) findViewById(R.id.nameRoom);
 		inputName.setText(roomName);
 		dbID = intent.getStringExtra("id");
-		roomURL = intent.getStringExtra("url");//"https://s3-us-west-2.amazonaws.com/promenadevt-1/room"+dbID;
+		roomURL = "https://s3-us-west-2.amazonaws.com/promenadevt-1/room"+dbID;
 		Constants = new Constants(propID,dbID);
 		
 		btnChangeName = (Button) findViewById(R.id.btnUpdateR);
@@ -172,19 +165,11 @@ public class EditActivity extends Activity
 		if(roomURL != null){
 			try {
 				Bitmap bitmap = new S3GetObjectTask().execute().get();
-				
-				int height = Math.min(4096, bitmap.getHeight());
-				int width = Math.min(4096, bitmap.getWidth());;
-				
-				
-				roomImage.setImageBitmap(getResizedBitmap(bitmap,height,width));
+				roomImage.setImageBitmap(bitmap);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}catch (java.lang.NullPointerException e){
-				e.printStackTrace();
-			}
-			catch (ExecutionException e) {
+			} catch (ExecutionException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -465,21 +450,6 @@ public class EditActivity extends Activity
 					});
 
 			confirm.show().show();
-		}
-		
-		public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth) {
-		    int width = bm.getWidth();
-		    int height = bm.getHeight();
-		    float scaleWidth = ((float) newWidth) / width;
-		    float scaleHeight = ((float) newHeight) / height;
-		    // CREATE A MATRIX FOR THE MANIPULATION
-		    Matrix matrix = new Matrix();
-		    // RESIZE THE BIT MAP
-		    matrix.postScale(scaleWidth, scaleHeight);
-
-		    // "RECREATE" THE NEW BITMAP
-		    Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
-		    return resizedBitmap;
 		}
 }
 
