@@ -1,8 +1,6 @@
 package com.promenadevt;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -15,20 +13,16 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.provider.OpenableColumns;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ViewSwitcher;
@@ -104,40 +98,18 @@ public class EditActivity extends Activity
 			roomImage.setImageBitmap(thumbnail);
 		}
 		else if(requestCode == PHOTO_SELECTED){
-			if (resultCode == RESULT_OK && data != null) {
+			if (resultCode == RESULT_OK) {
 
 				Uri selectedImage = data.getData();
-				/*String[] filePathColumn = {MediaStore.Images.Media.DATA};
-				Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-				cursor.moveToFirst();
-				int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-	            String filePath = cursor.getString(columnIndex);
-	            cursor.close();
-				Bitmap thumbnail = BitmapFactory.decodeFile(filePath);*/
+				Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
 				
-				//roomImage.setImageBitmap(getResizedBitmap(thumbnail,height,width));
+				int height = Math.min(4096, thumbnail.getHeight());
+				int width = Math.min(4096, thumbnail.getWidth());;
 				
+				
+				roomImage.setImageBitmap(getResizedBitmap(thumbnail,height,width));
 				new S3PutObjectTask().execute(selectedImage);
 				userFunctions.changeURL(dbID, "https://s3-us-west-2.amazonaws.com/promenadevt-1/room"+dbID);
-				
-				try {
-					Bitmap bitmap = new S3GetObjectTask().execute().get();
-					int height=0;
-					int width=0;
-					try{
-						height = Math.min(4096, bitmap.getHeight());
-						width = Math.min(4096, bitmap.getWidth());;
-					}catch(Exception e){
-						height = 4096;
-						width = 4096;
-					}
-					
-					
-					roomImage.setImageBitmap(getResizedBitmap(bitmap,height,width));
-				}catch(Exception e){
-					e.printStackTrace();
-				}
-				
 			}
 		}
 		super.onActivityResult(requestCode, resultCode, data);
@@ -169,6 +141,8 @@ public class EditActivity extends Activity
 		
 		s3Client.setRegion(Region.getRegion(Regions.US_WEST_2));
 		
+		//new S3GeneratePresignedUrlTask().execute();
+		
 		
 		// may need to account for newly registered user here
 		Intent intent = getIntent();
@@ -195,30 +169,22 @@ public class EditActivity extends Activity
 		
 		userFunctions = new UserFunctions();
 		
-		
-		
 		if(roomURL != null){
-			Log.d("URL",roomURL);
 			try {
 				Bitmap bitmap = new S3GetObjectTask().execute().get();
-				int height=0;
-				int width=0;
-				try{
-					height = Math.min(4096, bitmap.getHeight());
-					width = Math.min(4096, bitmap.getWidth());;
-				}catch(Exception e){
-					height = 4096;
-					width = 4096;
-				}
+				
+				int height = Math.min(4096, bitmap.getHeight());
+				int width = Math.min(4096, bitmap.getWidth());;
 				
 				
 				roomImage.setImageBitmap(getResizedBitmap(bitmap,height,width));
-			} catch (java.lang.NullPointerException e){
-				e.printStackTrace();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} catch (ExecutionException e) {
+			}catch (java.lang.NullPointerException e){
+				e.printStackTrace();
+			}
+			catch (ExecutionException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -399,23 +365,17 @@ public class EditActivity extends Activity
 			AsyncTask<Void, Void, Bitmap> {
 
 		protected Bitmap doInBackground(Void... voids) {
-			try{
-				return displayImage(roomImage,s3Client,"room"+dbID, "promenadevt-1");
-			}catch(Exception e){
-				e.printStackTrace();
-				return null;
-			}
-		}
 
 			//S3TaskResult result = new S3TaskResult();
 
-			//try {
+			try {
 				// Ensure that the image will be treated as such.
-				/*ResponseHeaderOverrides override = new ResponseHeaderOverrides();
+				ResponseHeaderOverrides override = new ResponseHeaderOverrides();
 				override.setContentType("image/jpeg");
 
 				// Generate the presigned URL.
 
+				// Added an hour's worth of milliseconds to the current time.
 				
 				GetObjectRequest urlRequest = new GetObjectRequest(
 						Constants.getPictureBucket(), "room" + dbID);
@@ -423,8 +383,6 @@ public class EditActivity extends Activity
 				urlRequest.setResponseHeaders(override);
 
 				S3Object url = s3Client.getObject(urlRequest);
-				
-				Log.d("S3 REQUEST",url.toString());
 					
 				byte[] bytes = null;
 				try {
@@ -446,8 +404,7 @@ public class EditActivity extends Activity
 			return null;
 
 			//return result;
-		}*/
-		
+		}
 	}
 
 	private class S3TaskResult {
@@ -524,77 +481,5 @@ public class EditActivity extends Activity
 		    Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
 		    return resizedBitmap;
 		}
-		
-		//new AWS access functions
-		private Bitmap displayImage( ImageView view, 
-                AmazonS3Client s3, 
-                String imageName, 
-                String bucketName ) {
-			 if ( this.isNewImageAvailable( s3, imageName, bucketName ) ) {
-			     this.getRemoteImage( s3, imageName, bucketName ); 
-			 }
-			
-			 InputStream stream = this.getLocalImage( imageName ); 
-			 return BitmapFactory.decodeStream(stream);
-			 //view.setImageDrawable( Drawable.createFromStream( stream, "src" ) ); 
-		}
-		
-		private boolean isNewImageAvailable( AmazonS3Client s3, 
-                String imageName, 
-                String bucketName ) {
-			File file = new File( this.getApplicationContext().getFilesDir(), 
-			    imageName );
-			if ( !file.exists() ) {
-			return true;
-			}
-			
-			ObjectMetadata metadata = s3.getObjectMetadata( bucketName, 
-			                                                    imageName );
-			long remoteLastModified = metadata.getLastModified().getTime();
-			
-			if ( file.lastModified() < remoteLastModified ) {
-			return true;
-			}
-			else {
-			return false;
-			}
-		}
-		
-		private void getRemoteImage( AmazonS3Client s3, 
-			                String imageName, 
-			                String bucketName ) {
-			S3Object object = s3.getObject( bucketName, imageName );
-			this.storeImageLocally( object.getObjectContent(), imageName );
-		}
-		
-		private void storeImageLocally( InputStream stream, 
-			                String imageName ) {
-			 FileOutputStream outputStream;
-			 try {
-			     outputStream = openFileOutput( imageName, 
-			                    Context.MODE_PRIVATE);
-			
-			     int length = 0;
-			     byte[] buffer = new byte[1024];
-			     while ( ( length = stream.read( buffer ) ) > 0 ) {
-			         outputStream.write( buffer, 0, length );
-			     }
-			
-			     outputStream.close();
-			 } 
-			 catch ( Exception e ) {
-			     Log.d( "Store Image", "Can't store image : " + e );
-			 } 
-		}
-		
-		private InputStream getLocalImage( String imageName ) {
-		    try {
-		        return openFileInput( imageName );
-		    }
-		    catch ( FileNotFoundException exception ) {
-		        return null;
-		    }
-		}
-
 }
 
