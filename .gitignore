@@ -1,4 +1,5 @@
 *.log
-/.metadata/
-/.settings/
+/PromenadeVT/.metadata/*
+/PromenadeVT/.settings/*
+/PromenadeVT/bit/classes/*
 
